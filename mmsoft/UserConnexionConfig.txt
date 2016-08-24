@@ -1,0 +1,6 @@
+Username=anth
+Persist Security Info=False
+Data Source=SVR2012\SQLEXPRESS
+Integrated Security=SSPI
+Initial Catalog=MMSOFT
+MultipleActiveResultSets=True

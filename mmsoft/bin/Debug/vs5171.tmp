@@ -1,0 +1,2056 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MMSoft</name>
+    </assembly>
+    <members>
+        <member name="F:MMSoft.FormCheckingEdition.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMSoft.FormCheckingEdition.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMSoft.FormCheckingEdition.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:MMSoft.BorderlessToolStripRenderer">
+            <summary>
+            Class defining a custom renderer for the tool strip control.
+            </summary>
+        </member>
+        <member name="M:MMSoft.BorderlessToolStripRenderer.#ctor">
+            <summary>
+            Default contructor, call base class constructor.
+            </summary>
+        </member>
+        <member name="M:MMSoft.BorderlessToolStripRenderer.OnRenderToolStripBorder(System.Windows.Forms.ToolStripRenderEventArgs)">
+            <summary>
+            OnRenderToolStripBorder base class override. Do nothing to avoid rendering borders
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:MMSoft.DBComboBox">
+            <summary>
+            This class defines a combo box that will display the elements of a table in a database. The items of the list are defined by an id and a string value of a specified field in the table.
+            </summary>
+        </member>
+        <member name="M:MMSoft.DBComboBox.SelectItemByID(System.UInt32)">
+            <summary>
+            This methods selects an item in its combo box list given an ID present in a DBComboBoxItem.
+            </summary>
+            <param name="ID_i"></param>
+        </member>
+        <member name="T:MMSoft.CustomDateTimePicker">
+            <summary>
+                A derivation of DateTimePicker allowing to change background color
+            </summary>
+        </member>
+        <member name="P:MMSoft.CustomDateTimePicker.BackColor">
+            <summary>
+                Gets or sets the background color of the control
+            </summary>
+        </member>
+        <member name="T:MMSoft.ControlStyle">
+            <summary>
+            Class defining methods to set a dfined style to a control.
+            </summary>
+        </member>
+        <member name="T:MMSoft.FunctionManager">
+            <summary>
+            Class managing Functions (scalar and table-valued) ressources of a Database
+            </summary>
+        </member>
+        <member name="F:MMSoft.FunctionManager.mConnected_b">
+            <summary>
+            Connexion state between client and Database
+            </summary>
+        </member>
+        <member name="F:MMSoft.FunctionManager.mSqlConnection_O">
+            <summary>
+            Variable representing the connection to a Database
+            </summary>
+        </member>
+        <member name="M:MMSoft.FunctionManager.#ctor(System.Boolean,System.Data.SqlClient.SqlConnection)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="Connected_b">Connexion between client and Database server state</param>
+            <param name="SqlConnection_O">Variable representing the connection to a Database</param>
+        </member>
+        <member name="M:MMSoft.FunctionManager.SCFNC_CountJobAchatEstim(System.Int32)">
+            <summary>
+            Count the estimated value of all the purchase made on a job
+            </summary>
+            <param name="JobID_i">The ID of the job</param>
+            <returns>The sum of estimated value of purchases. If there is a connection problem (client not connected) the method returns -1</returns>
+        </member>
+        <member name="T:MMSoft.StoredProcedureManager">
+            <summary>
+            Class managing Stored Procedure ressources of a Database
+            </summary>
+        </member>
+        <member name="F:MMSoft.StoredProcedureManager.mConnected_b">
+            <summary>
+            Connexion state between client and Database
+            </summary>
+        </member>
+        <member name="F:MMSoft.StoredProcedureManager.mSqlConnection_O">
+            <summary>
+            Variable representing the connection to a Database
+            </summary>
+        </member>
+        <member name="M:MMSoft.StoredProcedureManager.#ctor(System.Boolean,System.Data.SqlClient.SqlConnection)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="Connected_b">Connexion between client and Database server state</param>
+            <param name="SqlConnection_O">Variable representing the connection to a Database</param>
+        </member>
+        <member name="M:MMSoft.StoredProcedureManager.STPROC_GetUserPwd(System.UInt32)">
+            <summary>
+            Get user password for a given ID
+            </summary>
+        </member>
+        <member name="M:MMSoft.StoredProcedureManager.STPROC_VerifyUser(System.String,System.String,System.UInt32@,System.Boolean@)">
+            <summary>
+            Verify if the username exists in database and if password match with it. If it is not the case, the default ID returned is 0 (meaning an error occured).
+            </summary>
+        </member>
+        <member name="T:MMSoft.DatabaseManager">
+            <summary>
+            Class managing interaction between client and Database
+            </summary>
+        </member>
+        <member name="F:MMSoft.DatabaseManager.mSqlConnection_O">
+            <summary>
+            Variable representing the connection to a Database
+            </summary>
+        </member>
+        <member name="F:MMSoft.DatabaseManager.mStoredProcedureManager_O">
+            <summary>
+            Database Manager internal's Stored Procedure Manager. All the stored procedure of the Database must be accessed by
+            this Stored Procedure Manager
+            </summary>
+        </member>
+        <member name="F:MMSoft.DatabaseManager.mFunctionManager_O">
+            <summary>
+            Database Manager internal's function manager. All the user defined function (scalar and table-valued) must be accessed
+            by this Function Manager
+            </summary>
+        </member>
+        <member name="F:MMSoft.DatabaseManager.mConnected_b">
+            <summary>
+            State variable of connexion status to a Database
+            </summary>
+        </member>
+        <member name="F:MMSoft.DatabaseManager.mDBInstanceName_ST">
+            <summary>
+            Name of the database instance on which DBManager is connected
+            </summary>
+        </member>
+        <member name="M:MMSoft.DatabaseManager.#ctor">
+            <summary>
+            Default constructor, set member variables to null and connexion state to not connected
+            </summary>
+        </member>
+        <member name="M:MMSoft.DatabaseManager.ConnectDatabase(System.String)">
+             <summary>
+              Connect to database with provided connection string that contains information about the Database and credentials
+             </summary>
+             <param name="ConnectionString_S"> Default string for connection in format (Persist Info Security; Data Source; Integrated Security; Inital Catalog)\n
+             - Persist Security Info : security-sensitive information, such as the password, is not returned as part of the connection
+             - Data Source :	identifies the server, it could be local machine, machine domain name, or IP Address.\n
+             - Initial Catalog : is Database name on provided Database server.\n
+             - Integrated Security : set to SSPI to make connection with user's Windows login\n
+             - User ID : name of user configured in SQL Server.\n
+             - Password : password matching SQL Server User ID.
+            </param>
+            <example>Persist Security Info=False; Data Source=(local)\\SQLEXPRESS; Integrated Security=SSPI; Initial Catalog=MMSoft;UserID = toto; Password = 1234;</example>
+             <returns>true if connexion between server and client is established, and update internal state such that this object knows its connexion state</returns>
+        </member>
+        <member name="M:MMSoft.DatabaseManager.DisconnectDatabase">
+            <summary>
+            Close the previously opened connection to a database
+            </summary>
+            <returns>true if the disconnection was executed successfuly</returns>
+        </member>
+        <member name="M:MMSoft.DatabaseManager.Select(System.String)">
+            <summary>
+            Execute a select command on the database
+            </summary>
+            <param name="SqlSelect_S">String of Sql SELECT command</param>
+            <returns>Returns the associated SqlDataReader of request. Reader is null if command fails</returns>
+        </member>
+        <member name="M:MMSoft.DatabaseManager.ExecuteRequest(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object})">
+            <summary>
+            Execute a request command on the database
+            </summary>
+            <param name="SqlCmd_st">String of Sql command</param>
+            /// <param name="ParamList_O">List of parameters name of Sql command</param>
+            /// <param name="ValueList_O">Value oif parameters as object type. Implicit conversion is done between .net type and sql type.</param>
+            <returns>Returns the associated SqlDataReader of request. Reader is null if command fails</returns>
+        </member>
+        <member name="M:MMSoft.DatabaseManager.GetTableField(System.String,System.String,System.String)">
+            <summary>
+            This method select a single field from a table. If the method cannot find the specified field, "" is returned.
+            </summary>
+            <param name="TableName_ST"></param>
+            <param name="TableField_ST"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MMSoft.DocumentManager">
+            <summary>
+            Class managing the creation, modification and printing of documents
+            </summary>
+        </member>
+        <member name="F:MMSoft.TestDocumentManager.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMSoft.TestDocumentManager.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMSoft.TestDocumentManager.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:MMSoft.FormAskClient.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMSoft.FormAskClient.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMSoft.FormAskClient.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:MMSoft.FormVersion.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMSoft.FormVersion.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMSoft.FormVersion.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:MMSoft.FormAskString.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMSoft.FormAskString.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMSoft.FormAskString.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:MMSoft.DepartmentSelector.Initialize(MMSoft.DatabaseManager,System.Collections.Generic.List{System.UInt32})">
+            <summary>
+            Method that initialize the user control (it display some lines with a slected department)
+            </summary>
+        </member>
+        <member name="F:MMSoft.DepartmentSelector.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMSoft.DepartmentSelector.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMSoft.DepartmentSelector.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:MMSoft.HomeUC.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMSoft.HomeUC.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMSoft.HomeUC.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:MMSoft.ProviderUC.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMSoft.ProviderUC.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMSoft.ProviderUC.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:MMSoft.ComJobSelector.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMSoft.ComJobSelector.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMSoft.ComJobSelector.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:MMSoft.ComJobUC.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMSoft.ComJobUC.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMSoft.ComJobUC.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:MMSoft.DBListView.GetSelectedItemID">
+            <summary>
+            Returns the current selected ID. If nothing is selected, 0 is returned.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:MMSoft.DBListView.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMSoft.DBListView.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMSoft.DBListView.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:MMSoft.FormConnexion">
+            <summary>
+            Class defining the interaction with the connexion panel
+            </summary>
+        </member>
+        <member name="F:MMSoft.FormConnexion.mDBManager_O">
+            <summary>
+            Form's inner Database manager used to check correctness of user/pwd combination. This database manager will be passed to other forms at log in.
+            </summary>
+        </member>
+        <member name="F:MMSoft.FormConnexion.USER_CONNECTION_CONFIG_FILE">
+            <summary>
+            Filename of the user connection configuration. This file contains a slot to remember last username and a connection string to acces MMSoft's database.
+            This file should be located in the same directory as the executable.
+            </summary>
+        </member>
+        <member name="F:MMSoft.FormConnexion.NB_CONNECTION_CONFIG_PROPERTIES">
+            <summary>
+            Number of properties in connection configuration file.
+            </summary>
+        </member>
+        <member name="M:MMSoft.FormConnexion.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:MMSoft.FormConnexion.FormConnexion_Load(System.Object,System.EventArgs)">
+            <summary>
+            Form connexion load event
+            </summary>
+        </member>
+        <member name="M:MMSoft.FormConnexion.BtnLogIn_Click(System.Object,System.EventArgs)">
+            <summary>
+            Button login click event. This method assumes that connexion file is valid. If the user can be identified, this method set the user id of FormChecking class. 
+            </summary>
+        </member>
+        <member name="M:MMSoft.FormConnexion.CheckConnectionFileValidity">
+            <summary>
+            Check if the connection file provided is valid, meaning that it has enough parameters and if each parameter is the correct one expected. The values of these parameters is not tested here.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MMSoft.FormConnexion.BuildDefaultConnectionFile">
+            <summary>
+            Build a default connection file with default parameters
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MMSoft.FormConnexion.InitializeConnection">
+            <summary>
+            Method initializing the connection to the database's server. This method assume that the configuration file is correct. If the method cannot connect to the server,
+            a message box pop to prevent the user that there is a problem with its connection.
+            </summary>
+        </member>
+        <member name="M:MMSoft.FormConnexion.FillFormWithConnectionInfo">
+            <summary>
+            Initialize form with information found on user connection configuration file
+            </summary>
+        </member>
+        <member name="M:MMSoft.FormConnexion.RecordUsername">
+            <summary>
+            Record typed username in connection configuration file. If checked box is not checked, value is reset.
+            </summary>
+        </member>
+        <member name="F:MMSoft.FormConnexion.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMSoft.FormConnexion.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMSoft.FormConnexion.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:MMSoft.FormChecking">
+            <summary>
+            Class defining the form for operators and managers daily checkings.
+            </summary>
+        </member>
+        <member name="F:MMSoft.FormChecking.mDBManager_O">
+            <summary>
+            Form's inner Database manager used to check correctness of user/pwd combination. This database manager will be passed to other forms at log in.
+            </summary>
+        </member>
+        <member name="F:MMSoft.FormChecking.mFormConnexion_O">
+            <summary>
+            Internal connexion form of main form checking
+            </summary>
+        </member>
+        <member name="F:MMSoft.FormChecking.UserIdentified_b">
+            <summary>
+            Defines if user has been identified through connexion form
+            </summary>
+        </member>
+        <member name="F:MMSoft.FormChecking.mUserID_UL">
+            <summary>
+            User id identified by child form FormConnexion
+            </summary>
+        </member>
+        <member name="M:MMSoft.FormChecking.#ctor(MMSoft.DatabaseManager,System.UInt32)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:MMSoft.FormChecking.RefreshPersPointage">
+            <summary>
+            Method that reload the pers pointage according to the date selected by user
+            </summary>
+        </member>
+        <member name="F:MMSoft.FormChecking.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMSoft.FormChecking.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMSoft.FormChecking.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:MMSoft.FormUserPref.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMSoft.FormUserPref.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMSoft.FormUserPref.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:MMSoft.FormManager.mDBManager_O">
+            <summary>
+            Form's inner Database manager used to check correctness of user/pwd combination. This database manager will be passed to other forms at log in.
+            </summary>
+        </member>
+        <member name="F:MMSoft.FormManager.mUserID_UL">
+            <summary>
+            User id identified by child form FormConnexion
+            </summary>
+        </member>
+        <member name="F:MMSoft.FormManager.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMSoft.FormManager.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMSoft.FormManager.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:MMSoft.CheckingEdition.UpdateTaskDBComboBox(System.UInt32)">
+            <summary>
+            Builds task combo box according to selcted item in dep combo box
+            </summary>
+            <param name="DepID_i"></param>
+        </member>
+        <member name="M:MMSoft.CheckingEdition.UpdateMachineDBCombox(MMSoft.DBComboBox,System.UInt32)">
+            <summary>
+            Builds machine combo box according to selcted item in hall combo box
+            </summary>
+            <param name="DBComboxHall_O"></param>
+            <param name="PrefHall_UL"></param>
+        </member>
+        <member name="M:MMSoft.CheckingEdition.RecordModifications">
+            <summary>
+            This method record checking edition.
+            </summary>
+        </member>
+        <member name="M:MMSoft.CheckingEdition.CheckData(System.Single@,System.Single@,System.Single@,System.Single@,System.Single@)">
+            <summary>
+            This method checks if all data entered by user is correct before recording modifications. If this is not the case, wrong elements in GUI are highlighted.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:MMSoft.CheckingEdition.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMSoft.CheckingEdition.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMSoft.CheckingEdition.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:MMSoft.ClientUC.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMSoft.ClientUC.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMSoft.ClientUC.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:MMSoft.MembersUC.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMSoft.MembersUC.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMSoft.MembersUC.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.AchatDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.CertifDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ClientDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.CodePostalDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobAchatDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobEtapeDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComStatusDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.FournDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.HallDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.MachineDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.MsgDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.NoteEnvoiDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.OutilDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PersDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PersStatusDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PlanDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PointageDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PointageMachineDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.RelDepPersDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.RelJobTypeDepDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.SessionID_SSResumeDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.SessionIdentityDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.TypeDepDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.TypeDepCatDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.TypeSocDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.TypeTacheDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ClientSelectPopDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ClotComJobSelectPopDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComClientSelectPopDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComInfoSelectPopDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobAchatSelectPopDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobAndDepSelectPopDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobEncoursFactDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobEtapeActiveSelectPopDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobEtapeSelectPopDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobSelectPopDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComSelectPopDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.FournSelectPopDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.GroupedPointageMachineSelectPopDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.GroupedPointageSelectPopDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.NoteEnvoiAndCertifDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.NoteEnvoiSelectInfoDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PersComJobSelectPopDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PersSelectPopDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PointageMachineSelectPopDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PointageSelectPopDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.QteStatDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.RelDepPersUnitDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.SelComJobEtapeContextDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.SelOperateurListDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.TypeDepSelectPopDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.TypeTaskSelectPopDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.CountComJobDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.CountPlanByNameDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.CountTaskDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.GetCumulTableDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.GetCumulTableViewDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.GetDetailedCumulTableViewDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.GetPersTotHoursPerMonthDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.AchatRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.CertifRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ClientRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.CodePostalRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobAchatRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobEtapeRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComStatusRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.FournRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.HallRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.MachineRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.MsgRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.NoteEnvoiRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.OutilRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PersRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PersStatusRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PlanRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PointageRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PointageMachineRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.RelDepPersRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.RelJobTypeDepRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.SessionID_SSResumeRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.SessionIdentityRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.TypeDepRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.TypeDepCatRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.TypeSocRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.TypeTacheRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ClientSelectPopRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ClotComJobSelectPopRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComClientSelectPopRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComInfoSelectPopRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobAchatSelectPopRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobAndDepSelectPopRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobEncoursFactRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobEtapeActiveSelectPopRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobEtapeSelectPopRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobSelectPopRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComSelectPopRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.FournSelectPopRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.GroupedPointageMachineSelectPopRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.GroupedPointageSelectPopRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.NoteEnvoiAndCertifRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.NoteEnvoiSelectInfoRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PersComJobSelectPopRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PersSelectPopRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PointageMachineSelectPopRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PointageSelectPopRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.QteStatRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.RelDepPersUnitRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.SelComJobEtapeContextRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.SelOperateurListRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.TypeDepSelectPopRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.TypeTaskSelectPopRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.CountComJobRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.CountPlanByNameRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.CountTaskRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.GetCumulTableRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.GetCumulTableViewRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.GetDetailedCumulTableViewRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.GetPersTotHoursPerMonthRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.AchatRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.CertifRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ClientRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.CodePostalRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobAchatRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobEtapeRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComStatusRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.FournRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.HallRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.MachineRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.MsgRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.NoteEnvoiRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.OutilRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PersRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PersStatusRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PlanRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PointageRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PointageMachineRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.RelDepPersRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.RelJobTypeDepRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.SessionID_SSResumeRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.SessionIdentityRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.TypeDepRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.TypeDepCatRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.TypeSocRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.TypeTacheRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ClientSelectPopRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ClotComJobSelectPopRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComClientSelectPopRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComInfoSelectPopRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobAchatSelectPopRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobAndDepSelectPopRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobEncoursFactRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobEtapeActiveSelectPopRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobEtapeSelectPopRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComJobSelectPopRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.ComSelectPopRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.FournSelectPopRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.GroupedPointageMachineSelectPopRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.GroupedPointageSelectPopRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.NoteEnvoiAndCertifRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.NoteEnvoiSelectInfoRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PersComJobSelectPopRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PersSelectPopRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PointageMachineSelectPopRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.PointageSelectPopRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.QteStatRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.RelDepPersUnitRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.SelComJobEtapeContextRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.SelOperateurListRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.TypeDepSelectPopRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.TypeTaskSelectPopRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.CountComJobRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.CountPlanByNameRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.CountTaskRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.GetCumulTableRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.GetCumulTableViewRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.GetDetailedCumulTableViewRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSet.GetPersTotHoursPerMonthRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.AchatTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.CertifTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.ClientTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.CodePostalTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.ComTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.ComJobTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.ComJobAchatTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.ComJobEtapeTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.ComStatusTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.FournTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.HallTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.MachineTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.MsgTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.NoteEnvoiTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.OutilTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.PersTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.PersStatusTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.PlanTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.PointageTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.PointageMachineTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.RelDepPersTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.RelJobTypeDepTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.SessionID_SSResumeTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.SessionIdentityTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.TypeDepTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.TypeDepCatTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.TypeSocTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.TypeTacheTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.ClientSelectPopTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.ClotComJobSelectPopTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.ComClientSelectPopTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.ComInfoSelectPopTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.ComJobAchatSelectPopTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.ComJobAndDepSelectPopTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.ComJobEncoursFactTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.ComJobEtapeActiveSelectPopTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.ComJobEtapeSelectPopTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.ComJobSelectPopTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.ComSelectPopTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.FournSelectPopTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.GroupedPointageMachineSelectPopTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.GroupedPointageSelectPopTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.NoteEnvoiAndCertifTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.NoteEnvoiSelectInfoTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.PersComJobSelectPopTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.PersSelectPopTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.PointageMachineSelectPopTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.PointageSelectPopTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.QteStatTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.RelDepPersUnitTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.SelComJobEtapeContextTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.SelOperateurListTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.TypeDepSelectPopTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.TypeTaskSelectPopTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.CountComJobTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.CountPlanByNameTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.CountTaskTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.GetCumulTableTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.GetCumulTableViewTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.GetDetailedCumulTableViewTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.GetPersTotHoursPerMonthTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.QueriesTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.TableAdapterManager">
+             <summary>
+            TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+            </summary>
+        </member>
+        <member name="M:MMSoft.MMSOFTDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(MMSoft.MMSOFTDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Update rows in top-down order.
+            </summary>
+        </member>
+        <member name="M:MMSoft.MMSOFTDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(MMSoft.MMSOFTDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Insert rows in top-down order.
+            </summary>
+        </member>
+        <member name="M:MMSoft.MMSOFTDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(MMSoft.MMSOFTDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Delete rows in bottom-up order.
+            </summary>
+        </member>
+        <member name="M:MMSoft.MMSOFTDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+            </summary>
+        </member>
+        <member name="M:MMSoft.MMSOFTDataSetTableAdapters.TableAdapterManager.UpdateAll(MMSoft.MMSOFTDataSet)">
+             <summary>
+            Update all changes to the dataset.
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+             <summary>
+            Update Order Option
+            </summary>
+        </member>
+        <member name="T:MMSoft.MMSOFTDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+             <summary>
+            Used to sort self-referenced table's rows
+            </summary>
+        </member>
+        <member name="M:MMSoft.Program.Main">
+            <summary>
+            Main entry point of application, run the GUI at start
+            </summary>
+        </member>
+        <member name="T:MMSoft.CheckingViewer">
+            <summary>
+            Class defining the user control that presents a checking and allow to edit it
+            </summary>
+        </member>
+        <member name="F:MMSoft.CheckingViewer.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMSoft.CheckingViewer.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMSoft.CheckingViewer.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:MMSoft.ComJobViewer">
+            <summary>
+            User control defining a selectable list of job with a filter to display a subset of job present in the database. The user can reorder
+            the jobs acording to each column.
+            </summary>
+        </member>
+        <member name="M:MMSoft.ComJobViewer.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:MMSoft.ComJobViewer.Initialize(MMSoft.DatabaseManager)">
+            <summary>
+            Initialization method
+            </summary>
+        </member>
+        <member name="M:MMSoft.ComJobViewer.GetSelectedJobID">
+            <summary>
+            Returns the current selected job ID. If no job is selected, 0 is returned.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MMSoft.ComJobViewer.GetSelectedJobInfo(System.String)">
+            <summary>
+            Allow to retrieve an information displayed by the listview under a header column. The info must be retrieved by the column header name (= name in DB).
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:MMSoft.ComJobViewer.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMSoft.ComJobViewer.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMSoft.ComJobViewer.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:MMSoft.DayCheckingViewer.RefreshPersPointage">
+            <summary>
+            Method that reload the pers pointage according to the date. This method clears all the checking viewer on the GUI and simply rebuilds them.
+            There is no check of new or deleted check, the whole list is rebuild.
+            </summary>
+        </member>
+        <member name="F:MMSoft.DayCheckingViewer.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMSoft.DayCheckingViewer.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMSoft.DayCheckingViewer.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:MMSoft.UsrCtrl.FormDragBar.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMSoft.UsrCtrl.FormDragBar.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMSoft.UsrCtrl.FormDragBar.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:MMSoft.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MMSoft.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MMSoft.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:MMSoft.Properties.Resources.Home">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:MMSoft.Properties.Resources.HomeNewMsg">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+    </members>
+</doc>
