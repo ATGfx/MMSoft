@@ -652,5 +652,11 @@ namespace MMSoft
       {
          //DTPPromiseDelay.Value = DTPClientDelay.Value;
       }
+
+      private void ToolStripBtnReturnDBListView_Click(object sender, EventArgs e)
+      {
+          FormReturnListView FormReturnListView_O = new FormReturnListView(mDBManager_O, ComJobSelector.GetJobListView().GetSelectedItemID());
+          FormReturnListView_O.ShowDialog();
+      }
    }
 }

@@ -33,6 +33,7 @@
             this.ToolStripLblCmd = new System.Windows.Forms.ToolStripLabel();
             this.ToolStripBtnLoadClientPref = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.ComJobSelector = new MMSoft.ComJobSelector();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.PanelCmdInfo = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -70,11 +71,16 @@
             this.ToolStripJobDocuments = new System.Windows.Forms.ToolStrip();
             this.ToolStripBtnReports = new System.Windows.Forms.ToolStripButton();
             this.ToolStripBtnReturn = new System.Windows.Forms.ToolStripButton();
+            this.ToolStripBtnReturnDBListView = new System.Windows.Forms.ToolStripButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.JobAssociatedDep = new MMSoft.DepartmentSelector();
             this.ToolStripJobEditFooter = new System.Windows.Forms.ToolStrip();
             this.BtnSaveJobChanges = new System.Windows.Forms.ToolStripButton();
             this.BtnCancelJobChanges = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TxtHPrest = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.JobProgress = new System.Windows.Forms.ProgressBar();
             this.label17 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.TxtHEstim = new System.Windows.Forms.TextBox();
@@ -107,11 +113,6 @@
             this.ToolStripJob = new System.Windows.Forms.ToolStrip();
             this.ToolStripBtnAddJob = new System.Windows.Forms.ToolStripButton();
             this.ToolStripBtnCancelJob = new System.Windows.Forms.ToolStripButton();
-            this.JobProgress = new System.Windows.Forms.ProgressBar();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TxtHPrest = new System.Windows.Forms.TextBox();
-            this.ComJobSelector = new MMSoft.ComJobSelector();
-            this.JobAssociatedDep = new MMSoft.DepartmentSelector();
             this.ToolStripComTools.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -188,6 +189,18 @@
             this.splitContainer1.Size = new System.Drawing.Size(1920, 1002);
             this.splitContainer1.SplitterDistance = 621;
             this.splitContainer1.TabIndex = 2;
+            // 
+            // ComJobSelector
+            // 
+            this.ComJobSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ComJobSelector.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ComJobSelector.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ComJobSelector.Location = new System.Drawing.Point(0, 0);
+            this.ComJobSelector.Margin = new System.Windows.Forms.Padding(0);
+            this.ComJobSelector.Name = "ComJobSelector";
+            this.ComJobSelector.Padding = new System.Windows.Forms.Padding(3);
+            this.ComJobSelector.Size = new System.Drawing.Size(621, 1002);
+            this.ComJobSelector.TabIndex = 0;
             // 
             // splitContainer2
             // 
@@ -585,7 +598,8 @@
             this.ToolStripJobDocuments.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.ToolStripJobDocuments.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripBtnReports,
-            this.ToolStripBtnReturn});
+            this.ToolStripBtnReturn,
+            this.ToolStripBtnReturnDBListView});
             this.ToolStripJobDocuments.Location = new System.Drawing.Point(3, 3);
             this.ToolStripJobDocuments.Name = "ToolStripJobDocuments";
             this.ToolStripJobDocuments.Size = new System.Drawing.Size(1283, 39);
@@ -612,6 +626,16 @@
             this.ToolStripBtnReturn.Text = "Fiche return";
             this.ToolStripBtnReturn.Click += new System.EventHandler(this.ToolStripBtnReturn_Click);
             // 
+            // ToolStripBtnReturnDBListView
+            // 
+            this.ToolStripBtnReturnDBListView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ToolStripBtnReturnDBListView.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripBtnReturnDBListView.Image")));
+            this.ToolStripBtnReturnDBListView.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolStripBtnReturnDBListView.Name = "ToolStripBtnReturnDBListView";
+            this.ToolStripBtnReturnDBListView.Size = new System.Drawing.Size(36, 36);
+            this.ToolStripBtnReturnDBListView.Text = "Fiche return liste";
+            this.ToolStripBtnReturnDBListView.Click += new System.EventHandler(this.ToolStripBtnReturnDBListView_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.JobAssociatedDep);
@@ -622,6 +646,17 @@
             this.groupBox2.TabIndex = 98;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Départements associés";
+            // 
+            // JobAssociatedDep
+            // 
+            this.JobAssociatedDep.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.JobAssociatedDep.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.JobAssociatedDep.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
+            this.JobAssociatedDep.Location = new System.Drawing.Point(3, 25);
+            this.JobAssociatedDep.Margin = new System.Windows.Forms.Padding(5);
+            this.JobAssociatedDep.Name = "JobAssociatedDep";
+            this.JobAssociatedDep.Size = new System.Drawing.Size(625, 186);
+            this.JobAssociatedDep.TabIndex = 94;
             // 
             // ToolStripJobEditFooter
             // 
@@ -697,6 +732,33 @@
             this.groupBox1.TabIndex = 97;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informations générales";
+            // 
+            // TxtHPrest
+            // 
+            this.TxtHPrest.Enabled = false;
+            this.TxtHPrest.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
+            this.TxtHPrest.Location = new System.Drawing.Point(126, 152);
+            this.TxtHPrest.Name = "TxtHPrest";
+            this.TxtHPrest.Size = new System.Drawing.Size(82, 25);
+            this.TxtHPrest.TabIndex = 85;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
+            this.label4.Location = new System.Drawing.Point(6, 158);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 17);
+            this.label4.TabIndex = 84;
+            this.label4.Text = "Heures prestées :";
+            // 
+            // JobProgress
+            // 
+            this.JobProgress.Location = new System.Drawing.Point(214, 152);
+            this.JobProgress.Name = "JobProgress";
+            this.JobProgress.Size = new System.Drawing.Size(162, 25);
+            this.JobProgress.TabIndex = 83;
+            this.JobProgress.Value = 50;
             // 
             // label17
             // 
@@ -1027,56 +1089,6 @@
             this.ToolStripBtnCancelJob.Text = "Annuler le job";
             this.ToolStripBtnCancelJob.Click += new System.EventHandler(this.ToolStripBtnCancelJob_Click);
             // 
-            // JobProgress
-            // 
-            this.JobProgress.Location = new System.Drawing.Point(214, 152);
-            this.JobProgress.Name = "JobProgress";
-            this.JobProgress.Size = new System.Drawing.Size(162, 25);
-            this.JobProgress.TabIndex = 83;
-            this.JobProgress.Value = 50;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
-            this.label4.Location = new System.Drawing.Point(6, 158);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 17);
-            this.label4.TabIndex = 84;
-            this.label4.Text = "Heures prestées :";
-            // 
-            // TxtHPrest
-            // 
-            this.TxtHPrest.Enabled = false;
-            this.TxtHPrest.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
-            this.TxtHPrest.Location = new System.Drawing.Point(126, 152);
-            this.TxtHPrest.Name = "TxtHPrest";
-            this.TxtHPrest.Size = new System.Drawing.Size(82, 25);
-            this.TxtHPrest.TabIndex = 85;
-            // 
-            // ComJobSelector
-            // 
-            this.ComJobSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ComJobSelector.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ComJobSelector.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ComJobSelector.Location = new System.Drawing.Point(0, 0);
-            this.ComJobSelector.Margin = new System.Windows.Forms.Padding(0);
-            this.ComJobSelector.Name = "ComJobSelector";
-            this.ComJobSelector.Padding = new System.Windows.Forms.Padding(3);
-            this.ComJobSelector.Size = new System.Drawing.Size(621, 1002);
-            this.ComJobSelector.TabIndex = 0;
-            // 
-            // JobAssociatedDep
-            // 
-            this.JobAssociatedDep.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.JobAssociatedDep.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.JobAssociatedDep.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
-            this.JobAssociatedDep.Location = new System.Drawing.Point(3, 25);
-            this.JobAssociatedDep.Margin = new System.Windows.Forms.Padding(5);
-            this.JobAssociatedDep.Name = "JobAssociatedDep";
-            this.JobAssociatedDep.Size = new System.Drawing.Size(625, 186);
-            this.JobAssociatedDep.TabIndex = 94;
-            // 
             // ComJobUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1220,5 +1232,6 @@
       private System.Windows.Forms.TextBox TxtHPrest;
       private System.Windows.Forms.Label label4;
       private System.Windows.Forms.ProgressBar JobProgress;
+      private System.Windows.Forms.ToolStripButton ToolStripBtnReturnDBListView;
    }
 }

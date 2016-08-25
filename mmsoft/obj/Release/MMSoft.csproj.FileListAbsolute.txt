@@ -131,3 +131,4 @@ C:\Users\at\Desktop\MMSoft C#.Net\mmsoft\MMSoft\obj\Release\MMSoft.ComJobViewer.
 C:\Users\at\Desktop\MMSoft C#.Net\mmsoft\MMSoft\obj\Release\MMSoft.DayCheckingViewer.resources
 C:\Users\at\Desktop\MMSoft C#.Net\mmsoft\MMSoft\obj\Release\MMSoft.UsrCtrl.FormDragBar.resources
 C:\Users\at\Desktop\MMSoft C#.Net\mmsoft\MMSoft\obj\Release\MMSoft.csproj.GenerateResource.Cache
+C:\Users\at\Desktop\MMSoft C#.Net\mmsoft\MMSoft\obj\Release\MMSoft.FormReturnListView.resources
