@@ -968,6 +968,7 @@ namespace MMSoft
             if (SqlDataReader_O.Read())
             {
                Paragraph_O.AddFormattedText("Job : " + SqlDataReader_O["JobLib"].ToString(), "Heading2");
+               WordDoc_O.LastSection.AddParagraph();
 
                Table JobInfosTable_O = new Table();
                JobInfosTable_O.Borders.Width = 0;
@@ -1005,47 +1006,67 @@ namespace MMSoft
 
                Row_O = JobInfosTable_O.AddRow();
 
+               JobInfosTable_O.SetEdge(0, 0, 6, 4, Edge.Box, MigraDoc.DocumentObjectModel.BorderStyle.Single, 0.5, Colors.LightGray);
                WordDoc_O.LastSection.Add(JobInfosTable_O);
+               WordDoc_O.LastSection.AddParagraph();
+
+               Table HeaderTable_O = new Table();
+               HeaderTable_O.Borders.Width = 0;
+               HeaderTable_O.AddColumn(Unit.FromCentimeter((1.0f / 9) * PageWidth_f));
+               HeaderTable_O.AddColumn(Unit.FromCentimeter((2.0f / 9) * PageWidth_f));
+               HeaderTable_O.AddColumn(Unit.FromCentimeter((2.0f / 9) * PageWidth_f));
+               HeaderTable_O.AddColumn(Unit.FromCentimeter((1.0f / 9) * PageWidth_f));
+               HeaderTable_O.AddColumn(Unit.FromCentimeter((2.0f / 9) * PageWidth_f));
+               HeaderTable_O.AddColumn(Unit.FromCentimeter((1.0f / 9) * PageWidth_f));
+
+               Row_O = HeaderTable_O.AddRow();
+
+               Row_O.Cells[0].AddParagraph("Date :");
+               Row_O.Cells[0].Format.Font.Bold = true;
+
+               Row_O.Cells[1].AddParagraph("Opérateur :");
+               Row_O.Cells[1].Format.Font.Bold = true;
+
+               Row_O.Cells[2].AddParagraph("Tâche :");
+               Row_O.Cells[2].Format.Font.Bold = true;
+
+               Row_O.Cells[3].AddParagraph("Heures :");
+               Row_O.Cells[3].Format.Font.Bold = true;
+
+               Row_O.Cells[4].AddParagraph("Machine :");
+               Row_O.Cells[4].Format.Font.Bold = true;
+
+               Row_O.Cells[5].AddParagraph("Heures :");
+               Row_O.Cells[5].Format.Font.Bold = true;
+
+               HeaderTable_O.SetEdge(0, 0, 6, 1, Edge.Box, MigraDoc.DocumentObjectModel.BorderStyle.Single, 0.5, Colors.LightGray);
+               WordDoc_O.LastSection.Add(HeaderTable_O);
+               WordDoc_O.LastSection.AddParagraph();
 
                PointageSqlDataReader_O = mDBManager_O.Select("SELECT * FROM PointageSelectPop WHERE ComJobID=" + ComJobID_UL);
 
-               Table PointageTable_O = new Table();
-               PointageTable_O.Borders.Width = 0;
-               PointageTable_O.AddColumn(Unit.FromCentimeter((1.0f / 10) * PageWidth_f));
-               PointageTable_O.AddColumn(Unit.FromCentimeter((1.0f / 10) * PageWidth_f));
-               PointageTable_O.AddColumn(Unit.FromCentimeter((1.0f / 10) * PageWidth_f));
-               PointageTable_O.AddColumn(Unit.FromCentimeter((1.0f / 10) * PageWidth_f));
-               PointageTable_O.AddColumn(Unit.FromCentimeter((1.0f / 10) * PageWidth_f));
-               PointageTable_O.AddColumn(Unit.FromCentimeter((1.0f / 10) * PageWidth_f));
-               PointageTable_O.AddColumn(Unit.FromCentimeter((1.0f / 10) * PageWidth_f));
-               PointageTable_O.AddColumn(Unit.FromCentimeter((1.0f / 10) * PageWidth_f));
-               PointageTable_O.AddColumn(Unit.FromCentimeter((1.0f / 10) * PageWidth_f));
-               PointageTable_O.AddColumn(Unit.FromCentimeter((1.0f / 10) * PageWidth_f));
-
                while (PointageSqlDataReader_O.Read())
                {
+                  Table PointageTable_O = new Table();
+                  PointageTable_O.Borders.Width = 0;
+                  PointageTable_O.AddColumn(Unit.FromCentimeter((1.0f / 9) * PageWidth_f));
+                  PointageTable_O.AddColumn(Unit.FromCentimeter((2.0f / 9) * PageWidth_f));
+                  PointageTable_O.AddColumn(Unit.FromCentimeter((2.0f / 9) * PageWidth_f));
+                  PointageTable_O.AddColumn(Unit.FromCentimeter((1.0f / 9) * PageWidth_f));
+                  PointageTable_O.AddColumn(Unit.FromCentimeter((2.0f / 9) * PageWidth_f));
+                  PointageTable_O.AddColumn(Unit.FromCentimeter((1.0f / 9) * PageWidth_f));
+
                   Row_O = PointageTable_O.AddRow();
-                  Row_O = PointageTable_O.AddRow();
 
-                  Row_O.Cells[0].AddParagraph("Date :");
-                  Row_O.Cells[0].Format.Font.Bold = true;
-                  Row_O.Cells[1].AddParagraph(PointageSqlDataReader_O["DatePrest"].ToString());
+                  DateTime DatePrest_O = Convert.ToDateTime(PointageSqlDataReader_O["DatePrest"].ToString());
+                  Row_O.Cells[0].AddParagraph(DatePrest_O.ToShortDateString());
+                  
+                  Row_O.Cells[1].AddParagraph(PointageSqlDataReader_O["PersNom"].ToString());
 
-                  Row_O.Cells[2].AddParagraph("Opérateur :");
-                  Row_O.Cells[2].Format.Font.Bold = true;
-                  Row_O.Cells[3].AddParagraph(PointageSqlDataReader_O["PersNom"].ToString());
+                  Row_O.Cells[2].AddParagraph(PointageSqlDataReader_O["TypeTacheLib"].ToString());
 
-                  Row_O.Cells[4].AddParagraph("Tâche :");
-                  Row_O.Cells[4].Format.Font.Bold = true;
-                  Row_O.Cells[5].AddParagraph(PointageSqlDataReader_O["TypeTacheLib"].ToString());
-
-                  Row_O.Cells[6].AddParagraph("Heures :");
-                  Row_O.Cells[6].Format.Font.Bold = true;
-                  Row_O.Cells[7].AddParagraph(PointageSqlDataReader_O["NbrH"].ToString());
-
-                  Row_O.Cells[8].AddParagraph("Rem. :");
-                  Row_O.Cells[8].Format.Font.Bold = true;
-                  Row_O.Cells[9].AddParagraph(PointageSqlDataReader_O["Rem"].ToString());
+                  Row_O.Cells[3].Format.Alignment = ParagraphAlignment.Center;
+                  Row_O.Cells[3].AddParagraph(PointageSqlDataReader_O["NbrH"].ToString());
 
                   if (!String.IsNullOrEmpty(PointageSqlDataReader_O["ComJobEtapeID"].ToString()))
                   {
@@ -1056,32 +1077,62 @@ namespace MMSoft
                         // WARINING : Pointage Machine display Pointage AND PointageMachine, so Pointage Machine ID can be null !
                         if (!String.IsNullOrEmpty(MachineSqlDataReader_O["PointageMachinelID"].ToString()))
                         {
-                           Row_O = PointageTable_O.AddRow();
+                           Row_O.Cells[4].AddParagraph(MachineSqlDataReader_O["MachineLib"].ToString());
 
-                           Row_O.Cells[4].AddParagraph("Machine :");
-                           Row_O.Cells[4].Format.Font.Bold = true;
-                           Row_O.Cells[5].AddParagraph(MachineSqlDataReader_O["MachineLib"].ToString());
-
-                           Row_O.Cells[6].AddParagraph("H. machine :");
-                           Row_O.Cells[6].Format.Font.Bold = true;
-                           Row_O.Cells[7].AddParagraph(MachineSqlDataReader_O["NbrHMachine"].ToString());
+                           Row_O.Cells[5].Format.Alignment = ParagraphAlignment.Center;
+                           Row_O.Cells[5].AddParagraph(MachineSqlDataReader_O["NbrHMachine"].ToString());
                         }
                      }
                   }
 
-                  Row_O = PointageTable_O.AddRow();
-                  Row_O = PointageTable_O.AddRow();
+                  if (!String.IsNullOrEmpty(PointageSqlDataReader_O["Rem"].ToString()))
+                  {
+                      Table RemTable_O = new Table();
+                      RemTable_O.Borders.Width = 0;
+                      RemTable_O.AddColumn(Unit.FromCentimeter((1.0f / 10) * PageWidth_f));
+                      RemTable_O.AddColumn(Unit.FromCentimeter((9.0f / 10) * PageWidth_f));
 
-                  Row_O.Cells[0].AddParagraph("Tâche :");
-                  Row_O.Cells[0].Format.Font.Bold = true;
-                  Row_O.Cells[1].AddParagraph(mDBManager_O.mFunctionManager_O.SCFNC_CountPointageHoursOnJob(ComJobID_UL).ToString());
+                      Row_O = RemTable_O.AddRow();
+                      Row_O = RemTable_O.AddRow();
 
-                  Row_O.Cells[2].AddParagraph("Machine :");
-                  Row_O.Cells[2].Format.Font.Bold = true;
-                  Row_O.Cells[3].AddParagraph(mDBManager_O.mFunctionManager_O.SCFNC_CountMachineHoursOnJob(ComJobID_UL).ToString());
+                      Row_O.Cells[0].AddParagraph("Rem. :");
+                      Row_O.Cells[0].Format.Font.Bold = true;
+                      Row_O.Cells[1].AddParagraph(PointageSqlDataReader_O["Rem"].ToString());
+
+                      Row_O = RemTable_O.AddRow();
+
+                      //RemTable_O.SetEdge(0, 0, 2, 1, Edge.Box, MigraDoc.DocumentObjectModel.BorderStyle.Single, 0.5, Colors.LightGray);
+                      WordDoc_O.LastSection.Add(RemTable_O);
+                  }
+
+                  WordDoc_O.LastSection.Add(PointageTable_O);
                }
 
-               WordDoc_O.LastSection.Add(PointageTable_O);
+               WordDoc_O.LastSection.AddParagraph();
+
+               Table SummaryTable_O = new Table();
+               SummaryTable_O.Borders.Width = 0;
+               SummaryTable_O.AddColumn(Unit.FromCentimeter((1.0f / 9) * PageWidth_f));
+               SummaryTable_O.AddColumn(Unit.FromCentimeter((2.0f / 9) * PageWidth_f));
+               SummaryTable_O.AddColumn(Unit.FromCentimeter((2.0f / 9) * PageWidth_f));
+               SummaryTable_O.AddColumn(Unit.FromCentimeter((1.0f / 9) * PageWidth_f));
+               SummaryTable_O.AddColumn(Unit.FromCentimeter((2.0f / 9) * PageWidth_f));
+               SummaryTable_O.AddColumn(Unit.FromCentimeter((1.0f / 9) * PageWidth_f));
+
+               Row_O = SummaryTable_O.AddRow();
+
+               Row_O.Cells[2].AddParagraph("Total des heures :");
+               Row_O.Cells[2].Format.Font.Bold = true;
+               Row_O.Cells[3].AddParagraph(mDBManager_O.mFunctionManager_O.SCFNC_CountPointageHoursOnJob(ComJobID_UL).ToString());
+               Row_O.Cells[3].Format.Alignment = ParagraphAlignment.Center;
+
+               Row_O.Cells[4].AddParagraph("Total des h. machine :");
+               Row_O.Cells[4].Format.Font.Bold = true;
+               Row_O.Cells[5].AddParagraph(mDBManager_O.mFunctionManager_O.SCFNC_CountMachineHoursOnJob(ComJobID_UL).ToString());
+               Row_O.Cells[5].Format.Alignment = ParagraphAlignment.Center;
+
+               SummaryTable_O.SetEdge(0, 0, 6, 1, Edge.Box, MigraDoc.DocumentObjectModel.BorderStyle.Single, 0.5, Colors.LightGray);
+               WordDoc_O.LastSection.Add(SummaryTable_O);
             }
          }
 

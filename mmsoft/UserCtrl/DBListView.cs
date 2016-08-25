@@ -91,6 +91,7 @@ namespace MMSoft
          Asc_b = true;
          mLastSQLRequest_st = "";
          mInitialWhere_ST = InitialWhere_ST;
+         mInitialOrderBy_ST = OrderBy_ST;
 
          mListView_O.View = View.Details;
          mListView_O.FullRowSelect = true;

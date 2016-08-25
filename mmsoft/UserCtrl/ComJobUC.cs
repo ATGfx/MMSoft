@@ -128,7 +128,10 @@ namespace MMSoft
          mInitializingComData_b = true;
 
          ClearComInfo();
-         ClearJobInfo();
+         if (ComJobSelector.GetJobListView().GetSelectedItemID() == 0)
+         {
+            ClearJobInfo();
+         }
 
          if (mDBManager_O != null && mDBManager_O.mConnected_b)
          {
@@ -275,6 +278,13 @@ namespace MMSoft
                catch (FormatException e) { DTPRealisedDelay.Value = DTPRealisedDelay.MinDate; }
                TxtJobInfo.Text = SqlDataReader_O["InfoJob"].ToString();
                CheckBoxRegieWork.Checked = RegieWork_i > 0;
+
+               // Fill sum hours prested on job
+               float NbrH_f = mDBManager_O.mFunctionManager_O.SCFNC_CountPointageHoursOnJob(ComJobID_UL);
+
+               TxtHPrest.Text = NbrH_f.ToString();
+               JobProgress.Maximum = (int)Convert.ToDecimal(TxtHEstim.Text);
+               JobProgress.Value = Math.Min((int)NbrH_f, JobProgress.Maximum);
             }
 
             SqlDataReader_O.Close();
@@ -563,6 +573,8 @@ namespace MMSoft
          DTPClientDelay.Value = DTPClientDelay.MinDate;
          DTPPromiseDelay.Value = DTPPromiseDelay.MinDate;
          JobAssociatedDep.Clear();
+         TxtHPrest.Text = "";
+         JobProgress.Value = 0;
 
          mIgnoreJobValueChangedEvent_b = false;
       }
