@@ -1047,65 +1047,66 @@ namespace MMSoft
 
                while (PointageSqlDataReader_O.Read())
                {
-                  Table PointageTable_O = new Table();
-                  PointageTable_O.Borders.Width = 0;
-                  PointageTable_O.AddColumn(Unit.FromCentimeter((1.0f / 9) * PageWidth_f));
-                  PointageTable_O.AddColumn(Unit.FromCentimeter((2.0f / 9) * PageWidth_f));
-                  PointageTable_O.AddColumn(Unit.FromCentimeter((2.0f / 9) * PageWidth_f));
-                  PointageTable_O.AddColumn(Unit.FromCentimeter((1.0f / 9) * PageWidth_f));
-                  PointageTable_O.AddColumn(Unit.FromCentimeter((2.0f / 9) * PageWidth_f));
-                  PointageTable_O.AddColumn(Unit.FromCentimeter((1.0f / 9) * PageWidth_f));
+                   if (!String.IsNullOrEmpty(PointageSqlDataReader_O["ComJobEtapeID"].ToString()))
+                   {
+                       Table PointageTable_O = new Table();
+                       PointageTable_O.Borders.Width = 0;
+                       PointageTable_O.AddColumn(Unit.FromCentimeter((1.0f / 9) * PageWidth_f));
+                       PointageTable_O.AddColumn(Unit.FromCentimeter((2.0f / 9) * PageWidth_f));
+                       PointageTable_O.AddColumn(Unit.FromCentimeter((2.0f / 9) * PageWidth_f));
+                       PointageTable_O.AddColumn(Unit.FromCentimeter((1.0f / 9) * PageWidth_f));
+                       PointageTable_O.AddColumn(Unit.FromCentimeter((2.0f / 9) * PageWidth_f));
+                       PointageTable_O.AddColumn(Unit.FromCentimeter((1.0f / 9) * PageWidth_f));
 
-                  Row_O = PointageTable_O.AddRow();
+                       Row_O = PointageTable_O.AddRow();
 
-                  DateTime DatePrest_O = Convert.ToDateTime(PointageSqlDataReader_O["DatePrest"].ToString());
-                  Row_O.Cells[0].AddParagraph(DatePrest_O.ToShortDateString());
-                  
-                  Row_O.Cells[1].AddParagraph(PointageSqlDataReader_O["PersNom"].ToString());
+                       DateTime DatePrest_O = Convert.ToDateTime(PointageSqlDataReader_O["DatePrest"].ToString());
+                       Row_O.Cells[0].AddParagraph(DatePrest_O.ToShortDateString());
 
-                  Row_O.Cells[2].AddParagraph(PointageSqlDataReader_O["TypeTacheLib"].ToString());
+                       Row_O.Cells[1].AddParagraph(PointageSqlDataReader_O["PersNom"].ToString());
 
-                  Row_O.Cells[3].Format.Alignment = ParagraphAlignment.Center;
-                  Row_O.Cells[3].AddParagraph(PointageSqlDataReader_O["NbrH"].ToString());
+                       Row_O.Cells[2].AddParagraph(PointageSqlDataReader_O["TypeTacheLib"].ToString());
 
-                  if (!String.IsNullOrEmpty(PointageSqlDataReader_O["ComJobEtapeID"].ToString()))
-                  {
-                     MachineSqlDataReader_O = mDBManager_O.Select("SELECT * FROM PointageMachineSelectPop WHERE ComJobEtapeID=" + PointageSqlDataReader_O["ComJobEtapeID"].ToString());
+                       Row_O.Cells[3].Format.Alignment = ParagraphAlignment.Center;
+                       Row_O.Cells[3].AddParagraph(PointageSqlDataReader_O["NbrH"].ToString());
 
-                     while (MachineSqlDataReader_O.Read())
-                     {
-                        // WARINING : Pointage Machine display Pointage AND PointageMachine, so Pointage Machine ID can be null !
-                        if (!String.IsNullOrEmpty(MachineSqlDataReader_O["PointageMachinelID"].ToString()))
+
+                        MachineSqlDataReader_O = mDBManager_O.Select("SELECT * FROM PointageMachineSelectPop WHERE ComJobEtapeID=" + PointageSqlDataReader_O["ComJobEtapeID"].ToString());
+
+                        while (MachineSqlDataReader_O.Read())
                         {
-                           Row_O.Cells[4].AddParagraph(MachineSqlDataReader_O["MachineLib"].ToString());
+                            // WARINING : Pointage Machine display Pointage AND PointageMachine, so Pointage Machine ID can be null !
+                            if (!String.IsNullOrEmpty(MachineSqlDataReader_O["PointageMachinelID"].ToString()))
+                            {
+                                Row_O.Cells[4].AddParagraph(MachineSqlDataReader_O["MachineLib"].ToString());
 
-                           Row_O.Cells[5].Format.Alignment = ParagraphAlignment.Center;
-                           Row_O.Cells[5].AddParagraph(MachineSqlDataReader_O["NbrHMachine"].ToString());
+                                Row_O.Cells[5].Format.Alignment = ParagraphAlignment.Center;
+                                Row_O.Cells[5].AddParagraph(MachineSqlDataReader_O["NbrHMachine"].ToString());
+                            }
                         }
-                     }
-                  }
 
-                  if (!String.IsNullOrEmpty(PointageSqlDataReader_O["Rem"].ToString()))
-                  {
-                      Table RemTable_O = new Table();
-                      RemTable_O.Borders.Width = 0;
-                      RemTable_O.AddColumn(Unit.FromCentimeter((1.0f / 10) * PageWidth_f));
-                      RemTable_O.AddColumn(Unit.FromCentimeter((9.0f / 10) * PageWidth_f));
+                       if (!String.IsNullOrEmpty(PointageSqlDataReader_O["Rem"].ToString()))
+                       {
+                           Table RemTable_O = new Table();
+                           RemTable_O.Borders.Width = 0;
+                           RemTable_O.AddColumn(Unit.FromCentimeter((1.0f / 10) * PageWidth_f));
+                           RemTable_O.AddColumn(Unit.FromCentimeter((9.0f / 10) * PageWidth_f));
 
-                      Row_O = RemTable_O.AddRow();
-                      Row_O = RemTable_O.AddRow();
+                           Row_O = RemTable_O.AddRow();
+                           Row_O = RemTable_O.AddRow();
 
-                      Row_O.Cells[0].AddParagraph("Rem. :");
-                      Row_O.Cells[0].Format.Font.Bold = true;
-                      Row_O.Cells[1].AddParagraph(PointageSqlDataReader_O["Rem"].ToString());
+                           Row_O.Cells[0].AddParagraph("Rem. :");
+                           Row_O.Cells[0].Format.Font.Bold = true;
+                           Row_O.Cells[1].AddParagraph(PointageSqlDataReader_O["Rem"].ToString());
 
-                      Row_O = RemTable_O.AddRow();
+                           Row_O = RemTable_O.AddRow();
 
-                      //RemTable_O.SetEdge(0, 0, 2, 1, Edge.Box, MigraDoc.DocumentObjectModel.BorderStyle.Single, 0.5, Colors.LightGray);
-                      WordDoc_O.LastSection.Add(RemTable_O);
-                  }
+                           //RemTable_O.SetEdge(0, 0, 2, 1, Edge.Box, MigraDoc.DocumentObjectModel.BorderStyle.Single, 0.5, Colors.LightGray);
+                           WordDoc_O.LastSection.Add(RemTable_O);
+                       }
 
-                  WordDoc_O.LastSection.Add(PointageTable_O);
+                       WordDoc_O.LastSection.Add(PointageTable_O);
+                   }
                }
 
                WordDoc_O.LastSection.AddParagraph();
