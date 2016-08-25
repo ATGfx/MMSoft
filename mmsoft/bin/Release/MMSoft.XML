@@ -550,9 +550,9 @@
             This file should be located in the same directory as the executable.
             </summary>
         </member>
-        <member name="F:MMSoft.FormConnexion.NB_CONNECTION_CONFIG_PROPERTIES">
+        <member name="F:MMSoft.FormConnexion.mUserConnexionInfo_O">
             <summary>
-            Number of properties in connection configuration file.
+            Data structure that contains all the information to open a connection to the database.
             </summary>
         </member>
         <member name="M:MMSoft.FormConnexion.#ctor">
@@ -565,22 +565,15 @@
             Form connexion load event
             </summary>
         </member>
+        <member name="M:MMSoft.FormConnexion.CheckProgramVersion">
+            <summary>
+            Method that check if the current build correspond to the version in the database. If they not match a pop-up inform the user that he is not up to date
+            </summary>
+        </member>
         <member name="M:MMSoft.FormConnexion.BtnLogIn_Click(System.Object,System.EventArgs)">
             <summary>
             Button login click event. This method assumes that connexion file is valid. If the user can be identified, this method set the user id of FormChecking class. 
             </summary>
-        </member>
-        <member name="M:MMSoft.FormConnexion.CheckConnectionFileValidity">
-            <summary>
-            Check if the connection file provided is valid, meaning that it has enough parameters and if each parameter is the correct one expected. The values of these parameters is not tested here.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:MMSoft.FormConnexion.BuildDefaultConnectionFile">
-            <summary>
-            Build a default connection file with default parameters
-            </summary>
-            <returns></returns>
         </member>
         <member name="M:MMSoft.FormConnexion.InitializeConnection">
             <summary>
@@ -593,9 +586,9 @@
             Initialize form with information found on user connection configuration file
             </summary>
         </member>
-        <member name="M:MMSoft.FormConnexion.RecordUsername">
+        <member name="M:MMSoft.FormConnexion.RecordConnexionInfo">
             <summary>
-            Record typed username in connection configuration file. If checked box is not checked, value is reset.
+            Record connexion infos in connection configuration file. If checked box is not checked, username is reset to empty field.
             </summary>
         </member>
         <member name="F:MMSoft.FormConnexion.components">

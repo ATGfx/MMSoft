@@ -6,12 +6,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace MMSoft
 {
    public partial class FormVersion : Form
    {
-      private String mVersion_st = "1.0.0";
+      private Version mVersion_O = Assembly.GetEntryAssembly().GetName().Version;
 
       public FormVersion()
       {
@@ -19,7 +20,7 @@ namespace MMSoft
 
          this.CenterToParent();
 
-         ToolStripLblVersion.Text = "MMSoft version " + mVersion_st;
+         ToolStripLblVersion.Text = "MMSoft version " + mVersion_O.Major + "." + mVersion_O.Minor;
 
          ToolStripValidatePref.Renderer = new BorderlessToolStripRenderer();
          ControlStyle.SetBackgroundColorFocusStyle(this);

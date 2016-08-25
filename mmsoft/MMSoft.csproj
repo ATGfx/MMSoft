@@ -177,6 +177,7 @@
     <Compile Include="Forms\FormAskString.Designer.cs">
       <DependentUpon>FormAskString.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserConnexionInfo.cs" />
     <Compile Include="UserCtrl\NECertifUC.cs">
       <SubType>UserControl</SubType>
     </Compile>

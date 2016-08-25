@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using System.Data.SqlClient;
+using System.Reflection;
 
 namespace MMSoft
 {
@@ -24,22 +26,19 @@ namespace MMSoft
         /// Filename of the user connection configuration. This file contains a slot to remember last username and a connection string to acces MMSoft's database.
         /// This file should be located in the same directory as the executable.
         /// </summary>
-        private readonly string USER_CONNECTION_CONFIG_FILE = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MMSoft\\UserConnexionConfig.txt");
+        private readonly string USER_CONNECTION_CONFIG_FILE = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MMSoft\\UserConnexionConfig.xml");
 
         /// <summary>
-        /// Number of properties in connection configuration file.
+        /// Data structure that contains all the information to open a connection to the database.
         /// </summary>
-        private readonly int NB_CONNECTION_CONFIG_PROPERTIES = 6;
+        private UserConnexionInfo mUserConnexionInfo_O;
 
         /// <summary>
         /// Default constructor
         /// </summary>
         public FormConnexion()
-        {            
+        {
             InitializeComponent();
-
-            // Init Database Manager
-            mDBManager_O = new DatabaseManager();
 
            // Check if roaming dir exists for MMSoft
            if (!Directory.Exists(Path.GetDirectoryName(USER_CONNECTION_CONFIG_FILE)))
@@ -55,15 +54,55 @@ namespace MMSoft
         {
             this.CenterToScreen();
 
-            // Check connection file validity
-            if (!CheckConnectionFileValidity())
+            mUserConnexionInfo_O = UserConnexionInfo.DeserializeFromFile(USER_CONNECTION_CONFIG_FILE);
+
+            // check if object can be deserialized (if no it means that it do not exist and we will recreate one)
+            if (mUserConnexionInfo_O == null)
             {
-                // If not valid rebuil a default one
-                BuildDefaultConnectionFile();
-            }                       
+                mUserConnexionInfo_O = new UserConnexionInfo();
+                mUserConnexionInfo_O.SerializeToFile(USER_CONNECTION_CONFIG_FILE);
+            }      
             
             // Fill form with connection informations (username and pwd)
-            FillFormWithConnectionInfo();          
+            FillFormWithConnectionInfo();
+
+            // Init Database Manager
+            mDBManager_O = new DatabaseManager();
+            InitializeConnection();
+
+            CheckProgramVersion();
+        }
+
+        /// <summary>
+        /// Method that check if the current build correspond to the version in the database. If they not match a pop-up inform the user that he is not up to date
+        /// </summary>
+        public void CheckProgramVersion()
+        {
+            String SqlRequest_st;
+            SqlDataReader SqlDataReader_O;
+
+            Version Version_O = Assembly.GetEntryAssembly().GetName().Version;
+
+            int Major_i, Minor_i;
+
+            if (mDBManager_O != null && mDBManager_O.mConnected_b)
+            {
+                SqlRequest_st = "SELECT * FROM Version";
+
+                SqlDataReader_O = mDBManager_O.Select(SqlRequest_st);
+
+                while (SqlDataReader_O.Read())
+                {
+                    Major_i = Convert.ToInt32(SqlDataReader_O["Major"].ToString());
+                    Minor_i = Convert.ToInt32(SqlDataReader_O["Minor"].ToString());
+
+                    if (Major_i != Version_O.Major || Minor_i != Version_O.Minor)
+                    {
+                        MessageBox.Show("Vous ne possédez pas la dernière version de MMSoft.\nVersion installée : " + Version_O.Major + "." + Version_O.Minor +
+                                        "\nVersion serveur : " + Major_i + "." + Minor_i, "Attention !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -74,11 +113,8 @@ namespace MMSoft
             UInt32 UserID_UL = 0;
             bool IsManager_b = false;
 
-            if (!mDBManager_O.mConnected_b)
-                InitializeConnection();
-
             // Record username in configuration file if check box remember me is checked, else reset property
-            RecordUsername();
+            RecordConnexionInfo();
 
             // Verify matching username - pwd
             if (mDBManager_O.mConnected_b)
@@ -88,7 +124,6 @@ namespace MMSoft
 
             if (UserID_UL > 0)
             {
-                RecordUsername();
                 this.Hide();
 
                 if (IsManager_b)
@@ -121,77 +156,6 @@ namespace MMSoft
         }
 
         /// <summary>
-        /// Check if the connection file provided is valid, meaning that it has enough parameters and if each parameter is the correct one expected. The values of these parameters is not tested here.
-        /// </summary>
-        /// <returns></returns>
-        private bool CheckConnectionFileValidity()
-        {
-            bool Rts_b = true;
-
-            string[] Lines_ST;
-            string[] CurrentLine_ST;
-
-            try
-            {
-                Lines_ST = System.IO.File.ReadAllLines(USER_CONNECTION_CONFIG_FILE);
-
-                // Check that we have enough args
-                Rts_b = (Lines_ST.Length >= NB_CONNECTION_CONFIG_PROPERTIES);
-
-                if (Rts_b)
-                {
-                    // Then check that each args is the correct one expected
-                    for (int i = 0; i < NB_CONNECTION_CONFIG_PROPERTIES; i++)
-                    {
-                        CurrentLine_ST = Lines_ST[i].Split('=');
-
-                        if (i == 0)
-                            Rts_b &= ((CurrentLine_ST.Length > 0) && CurrentLine_ST[0].Equals("Username"));
-                        else if (i == 1)
-                            Rts_b &= ((CurrentLine_ST.Length > 0) && CurrentLine_ST[0].Equals("Persist Security Info"));
-                        else if (i == 2)
-                            Rts_b &= ((CurrentLine_ST.Length > 0) && CurrentLine_ST[0].Equals("Data Source"));
-                        else if (i == 3)
-                            Rts_b &= ((CurrentLine_ST.Length > 0) && CurrentLine_ST[0].Equals("Integrated Security"));
-                        else if (i == 4)
-                            Rts_b &= ((CurrentLine_ST.Length > 0) && CurrentLine_ST[0].Equals("Initial Catalog"));
-                       else if (i==5)
-                            Rts_b &= ((CurrentLine_ST.Length > 0) && CurrentLine_ST[0].Equals("MultipleActiveResultSets"));
-                    }
-                }
-            }
-            catch (Exception Error_O)
-            {
-                Rts_b = false;
-                System.Diagnostics.Debug.WriteLine("Cannot open connection configuration file.\r\n" + Error_O.ToString());
-            }
-
-            return Rts_b;
-        }
-
-        /// <summary>
-        /// Build a default connection file with default parameters
-        /// </summary>
-        /// <returns></returns>
-        private bool BuildDefaultConnectionFile()
-        {
-            bool Rts_b = true;
-            string[] Lines_ST = { "Username=", "Persist Security Info=False", "Data Source=SVR2012\\SQLEXPRESS", "Integrated Security=SSPI", "Initial Catalog=MMSoft", "MultipleActiveResultSets=True" }; 
-
-            try
-            {
-                System.IO.File.WriteAllLines(USER_CONNECTION_CONFIG_FILE, Lines_ST);
-            }
-            catch (Exception Error_O)
-            {
-                Rts_b = false;
-                System.Diagnostics.Debug.WriteLine("Cannot write default connection configuration file.\r\n" + Error_O.ToString());
-            }
-
-            return Rts_b;            
-        }
-
-        /// <summary>
         /// Method initializing the connection to the database's server. This method assume that the configuration file is correct. If the method cannot connect to the server,
         /// a message box pop to prevent the user that there is a problem with its connection.
         /// </summary>
@@ -199,21 +163,15 @@ namespace MMSoft
         {
             string ConnectionString_ST = "";
             bool Connected_b;
-            string[] Lines_ST;
-            string[] CurrentLine_ST;
 
             try
             {
-                Lines_ST = System.IO.File.ReadAllLines(USER_CONNECTION_CONFIG_FILE);
-
-                // Then check that each args is the correct one expected (skip first line)
-                for (int i = 1; i < NB_CONNECTION_CONFIG_PROPERTIES; i++)
-                {
-                    CurrentLine_ST = Lines_ST[i].Split('=');
-
-                    if ((CurrentLine_ST.Length > 1))
-                        ConnectionString_ST += CurrentLine_ST[0] + "=" + CurrentLine_ST[1] + ";";
-                }
+                ConnectionString_ST += "User ID=" + mUserConnexionInfo_O.mUserName_st + "; ";
+                ConnectionString_ST += "Persist Security Info=" + mUserConnexionInfo_O.mPersistSecurityInfo_b.ToString() + "; ";
+                ConnectionString_ST += "Data Source=" + mUserConnexionInfo_O.mDataSource_st + "; ";
+                ConnectionString_ST += "Integrated Security=" + mUserConnexionInfo_O.mIntegratedSecurity_st + "; ";
+                ConnectionString_ST += "Initial Catalog=" + mUserConnexionInfo_O.mInitialCatalog_st + "; ";
+                ConnectionString_ST += "MultipleActiveResultSets=" + mUserConnexionInfo_O.mMultipleActiveResultSets_b.ToString() + ";";
 
                 mDBManager_O.ConnectDatabase(ConnectionString_ST);
                 Connected_b = mDBManager_O.mConnected_b;
@@ -233,72 +191,32 @@ namespace MMSoft
         /// </summary>
         private void FillFormWithConnectionInfo()
         {
-            System.IO.StreamReader File_O = new System.IO.StreamReader(USER_CONNECTION_CONFIG_FILE);
-            string Line_ST;
+            CheckRememberMe.Checked = mUserConnexionInfo_O.mSaveInfoOnLogin_b;
+            TxtUserName.Text = mUserConnexionInfo_O.mUserName_st;
 
-            try
+            if (String.IsNullOrEmpty(TxtUserName.Text))
             {
-                // Read first line of file
-                Line_ST = File_O.ReadLine();
-
-                // Read username if provided
-                if (Line_ST.Split('=').Length > 1 && !string.IsNullOrEmpty(Line_ST.Split('=')[1]))
-                {
-                    CheckRememberMe.Checked = true;
-                    TxtUserName.Text = Line_ST.Split('=')[1];
-                    TxtPwd.Select();
-                }
-                else
-                {
-                    CheckRememberMe.Checked = false;
-                    TxtUserName.Text = "";
-                    TxtUserName.Select();
-                }
+                TxtUserName.Select();
             }
-            catch (Exception Error_O)
+            else
             {
-                System.Diagnostics.Debug.WriteLine("Cannot open connection configuration file.\r\n" + Error_O.ToString());
+                TxtPwd.Select();
             }
-
-            File_O.Close();
         }
 
         /// <summary>
-        /// Record typed username in connection configuration file. If checked box is not checked, value is reset.
+        /// Record connexion infos in connection configuration file. If checked box is not checked, username is reset to empty field.
         /// </summary>
-        private void RecordUsername()
+        private void RecordConnexionInfo()
         {
-            string[] Lines_ST;
-            string[] NewLines_ST;
-
-            try
-            {
-                Lines_ST = System.IO.File.ReadAllLines(USER_CONNECTION_CONFIG_FILE);
-
-                NewLines_ST = new string[Lines_ST.Length];
-
-                for (int i = 0; i < Lines_ST.Length; i++)
-                {
-                    if (i == 0) // if line is user name property
-                    {
-                        NewLines_ST[i] = "Username=" + (CheckRememberMe.Checked ? TxtUserName.Text : "");
-                    }
-                    else
-                        NewLines_ST[i] = Lines_ST[i];
-                }
-
-                System.IO.File.WriteAllLines(USER_CONNECTION_CONFIG_FILE, NewLines_ST);
-
-            }
-            catch (Exception Error_O)
-            {
-                System.Diagnostics.Debug.WriteLine("Cannot open connection configuration file.\r\n" + Error_O.ToString());
-            }
+            mUserConnexionInfo_O.mUserName_st = (CheckRememberMe.Checked ? TxtUserName.Text : "");
+            mUserConnexionInfo_O.mSaveInfoOnLogin_b = CheckRememberMe.Checked;
+            mUserConnexionInfo_O.SerializeToFile(USER_CONNECTION_CONFIG_FILE);
         }
 
         private void LblExit_Click(object sender, EventArgs e)
         {
-           RecordUsername();
+           RecordConnexionInfo();
            Application.Exit();
         }
 
