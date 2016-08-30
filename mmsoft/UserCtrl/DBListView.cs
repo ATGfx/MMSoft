@@ -197,11 +197,14 @@ namespace MMSoft
                   for (int i = 1; i < mTableFields_ST.Count; i++)
                   {
                      // If type of data is date, take only 10 first char to avoid time
-                     if ((SqlDataReader_O.GetFieldType(SqlDataReader_O.GetOrdinal(mTableFields_ST[i])) == typeof(DateTime)) && 
-                         SqlDataReader_O[mTableFields_ST[i]].ToString().Length > 10)
-                        ListViewItem_O.SubItems.Add(SqlDataReader_O[mTableFields_ST[i]].ToString().Substring(0, 10));
-                     else
-                        ListViewItem_O.SubItems.Add(SqlDataReader_O[mTableFields_ST[i]].ToString());
+                      if ((SqlDataReader_O.GetFieldType(SqlDataReader_O.GetOrdinal(mTableFields_ST[i])) == typeof(DateTime)) &&
+                          !String.IsNullOrEmpty(SqlDataReader_O[mTableFields_ST[i]].ToString()))
+                      {
+                        DateTime Date_O = Convert.ToDateTime(SqlDataReader_O[mTableFields_ST[i]].ToString());
+                        ListViewItem_O.SubItems.Add(Date_O.ToShortDateString());
+                      }
+                      else
+                          ListViewItem_O.SubItems.Add(SqlDataReader_O[mTableFields_ST[i]].ToString());
 
                      ListViewItem_O.SubItems[i].Name = mTableFields_ST[i];
                   }
