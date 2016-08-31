@@ -340,24 +340,24 @@
 		<col def="S0">ISDotNetInstallerArgsCommit</col>
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
-		<row><td>AxInterop.AcroPDFLib.dll</td><td>{7537513E-4E8E-46BF-AF71-6632D29E0584}</td><td>INSTALLDIR</td><td>2</td><td/><td>axinterop.acropdflib.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>BouncyCastle.Crypto.dll</td><td>{23E0FC53-5888-4565-88FC-2BDFC4ABC8D9}</td><td>INSTALLDIR</td><td>2</td><td/><td>bouncycastle.crypto.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>AxInterop.AcroPDFLib.dll</td><td>{77BF5EA4-A1D0-4F03-8C38-B10B5C5D5BEB}</td><td>INSTALLDIR</td><td>2</td><td/><td>axinterop.acropdflib.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>BouncyCastle.Crypto.dll</td><td>{C406E990-35EA-4BAD-93BC-11181D945954}</td><td>INSTALLDIR</td><td>2</td><td/><td>bouncycastle.crypto.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td>{0D034C8C-9E5A-47E0-86F9-C7607AA1915E}</td><td>MMSOFT1</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{433F2CDB-8B19-4F0A-B4FF-1C1ED9D173D7}</td><td>TEMP</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT2</td><td>{8D9577B3-85D4-4FA4-8BE7-25A2D86D28BF}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT3</td><td>{56BEE222-E69E-4B26-A246-CDF4F30BD745}</td><td>IMG</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Interop.AcroPDFLib.dll</td><td>{F0C26C3E-C163-4614-B1E8-B0C8A3AF2E0A}</td><td>INSTALLDIR</td><td>2</td><td/><td>interop.acropdflib.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Ionic.Zlib.dll</td><td>{EBF758FD-0F70-4B1E-B4A2-E4EE6E1CD005}</td><td>INSTALLDIR</td><td>2</td><td/><td>ionic.zlib.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>MMSoft.Primary_output</td><td>{0B2A5A29-E70C-4182-A265-363256C067DD}</td><td>INSTALLDIR</td><td>2</td><td/><td>mmsoft.primary_output</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Microsoft.Office.Interop.Word.dll</td><td>{A51D0AD2-53CB-4A2D-AFA3-C909FD05EEA4}</td><td>INSTALLDIR</td><td>2</td><td/><td>microsoft.office.interop.wor</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Microsoft.Vbe.Interop.dll</td><td>{B2371700-2030-4711-A6D1-086599B8DF6E}</td><td>INSTALLDIR</td><td>2</td><td/><td>microsoft.vbe.interop.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>MigraDoc.DocumentObjectModel.dll</td><td>{BA291992-ECF4-4C4C-BB61-7EF2AEC2D7D1}</td><td>INSTALLDIR</td><td>2</td><td/><td>migradoc.documentobjectmodel</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>MigraDoc.Rendering.dll</td><td>{A36B1C03-C332-42EA-B6BE-D32CE1719140}</td><td>INSTALLDIR</td><td>2</td><td/><td>migradoc.rendering.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>MigraDoc.RtfRendering.dll</td><td>{766A9712-F52D-48DF-8D0E-1126F5B30CEB}</td><td>INSTALLDIR</td><td>2</td><td/><td>migradoc.rtfrendering.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>PdfSharp.Charting.dll</td><td>{D3D694FF-51EE-462B-9549-657D26B00D85}</td><td>INSTALLDIR</td><td>2</td><td/><td>pdfsharp.charting.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>PdfSharp.dll</td><td>{A0CDD25C-4CFB-46D9-BDFB-08B2BF180A5A}</td><td>INSTALLDIR</td><td>2</td><td/><td>pdfsharp.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>log4net.dll</td><td>{D5510D0C-108D-4216-B861-CF366868239C}</td><td>INSTALLDIR</td><td>2</td><td/><td>log4net.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>office.dll</td><td>{AA774EA1-31C3-4DB7-883D-1190D7785E6B}</td><td>INSTALLDIR</td><td>2</td><td/><td>office.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Interop.AcroPDFLib.dll</td><td>{9077D488-D48C-40A6-B324-9D147B2F1568}</td><td>INSTALLDIR</td><td>2</td><td/><td>interop.acropdflib.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Ionic.Zlib.dll</td><td>{8903738C-661A-40D0-8159-ECD295064358}</td><td>INSTALLDIR</td><td>2</td><td/><td>ionic.zlib.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>MMSoft.Primary_output</td><td>{33CD40EF-2100-4DCD-AD6B-70B2A4C15DE5}</td><td>INSTALLDIR</td><td>2</td><td/><td>mmsoft.primary_output</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Microsoft.Office.Interop.Word.dll</td><td>{FFC7D33B-64BC-4BAD-96FD-74EB3048BEE0}</td><td>INSTALLDIR</td><td>2</td><td/><td>microsoft.office.interop.wor</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Microsoft.Vbe.Interop.dll</td><td>{8FBFFE0E-5DDC-46BB-B2E6-FCD2F23A04F6}</td><td>INSTALLDIR</td><td>2</td><td/><td>microsoft.vbe.interop.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>MigraDoc.DocumentObjectModel.dll</td><td>{60324D15-E207-4338-A020-1B4A24CF7567}</td><td>INSTALLDIR</td><td>2</td><td/><td>migradoc.documentobjectmodel</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>MigraDoc.Rendering.dll</td><td>{EB8C48D7-F104-4F55-861F-A633656472CC}</td><td>INSTALLDIR</td><td>2</td><td/><td>migradoc.rendering.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>MigraDoc.RtfRendering.dll</td><td>{A6FBD102-2A19-4498-A674-AF3CBA025F2D}</td><td>INSTALLDIR</td><td>2</td><td/><td>migradoc.rtfrendering.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PdfSharp.Charting.dll</td><td>{E963891C-A2E2-4E15-AE39-365F3B2E2262}</td><td>INSTALLDIR</td><td>2</td><td/><td>pdfsharp.charting.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PdfSharp.dll</td><td>{40C89072-F208-4DA3-A1BF-80D8299D7724}</td><td>INSTALLDIR</td><td>2</td><td/><td>pdfsharp.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>log4net.dll</td><td>{8C2477F1-4AFA-4559-95A0-EBF17549776E}</td><td>INSTALLDIR</td><td>2</td><td/><td>log4net.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>office.dll</td><td>{2F2B98CC-A08A-485D-9F68-0AF5619DAC1A}</td><td>INSTALLDIR</td><td>2</td><td/><td>office.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -1189,6 +1189,8 @@
 		<row><td>USERPROFILE</td><td>TARGETDIR</td><td>.:USERPR~1|UserProfile</td><td/><td>0</td><td/></row>
 		<row><td>WindowsFolder</td><td>TARGETDIR</td><td>.:Windows</td><td/><td>0</td><td/></row>
 		<row><td>WindowsVolume</td><td>TARGETDIR</td><td>.:WinRoot</td><td/><td>0</td><td/></row>
+		<row><td>malcou_1_malcourant_m_canique</td><td>ProgramMenuFolder</td><td>MALCOU~1|Malcourant Mécanique</td><td/><td>1</td><td/></row>
+		<row><td>mmsoft</td><td>malcou_1_malcourant_m_canique</td><td>MMSoft</td><td/><td>1</td><td/></row>
 	</table>
 
 	<table name="DrLocator">
@@ -1912,29 +1914,29 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
-		<row><td>axinterop.acropdflib.dll</td><td>AxInterop.AcroPDFLib.dll</td><td>AXINTE~1.DLL|AxInterop.AcroPDFLib.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Dropbox\MMSoft C#.Net\MMSoft\MMSoft\bin\Release\AxInterop.AcroPDFLib.dll</td><td>1</td><td/></row>
-		<row><td>bouncycastle.crypto.dll</td><td>BouncyCastle.Crypto.dll</td><td>BOUNCY~1.DLL|BouncyCastle.Crypto.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Dropbox\MMSoft C#.Net\MMSoft\MMSoft\bin\Release\BouncyCastle.Crypto.dll</td><td>1</td><td/></row>
-		<row><td>interop.acropdflib.dll</td><td>Interop.AcroPDFLib.dll</td><td>INTERO~1.DLL|Interop.AcroPDFLib.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Dropbox\MMSoft C#.Net\MMSoft\MMSoft\bin\Release\Interop.AcroPDFLib.dll</td><td>1</td><td/></row>
-		<row><td>ionic.zlib.dll</td><td>Ionic.Zlib.dll</td><td>IONICZ~1.DLL|Ionic.Zlib.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Dropbox\MMSoft C#.Net\MMSoft\MMSoft\bin\Release\Ionic.Zlib.dll</td><td>1</td><td/></row>
-		<row><td>log4net.dll</td><td>log4net.dll</td><td>log4net.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Dropbox\MMSoft C#.Net\MMSoft\MMSoft\bin\Release\log4net.dll</td><td>1</td><td/></row>
-		<row><td>malcourantlogo.jpg</td><td>ISX_DEFAULTCOMPONENT3</td><td>MALCOU~1.JPG|MalcourantLogo.jpg</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Dropbox\MMSoft C#.Net\MMSoft\MMSoft\Img\MalcourantLogo.jpg</td><td>1</td><td/></row>
-		<row><td>microsoft.office.interop.wor</td><td>Microsoft.Office.Interop.Word.dll</td><td>MICROS~1.DLL|Microsoft.Office.Interop.Word.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Dropbox\MMSoft C#.Net\MMSoft\MMSoft\bin\Release\Microsoft.Office.Interop.Word.dll</td><td>1</td><td/></row>
-		<row><td>microsoft.office.interop.wor1</td><td>ISX_DEFAULTCOMPONENT2</td><td>MICROS~1.XML|Microsoft.Office.Interop.Word.xml</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Dropbox\MMSoft C#.Net\MMSoft\MMSoft\bin\Release\Microsoft.Office.Interop.Word.xml</td><td>1</td><td/></row>
-		<row><td>microsoft.vbe.interop.dll</td><td>Microsoft.Vbe.Interop.dll</td><td>MICROS~1.DLL|Microsoft.Vbe.Interop.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Dropbox\MMSoft C#.Net\MMSoft\MMSoft\bin\Release\Microsoft.Vbe.Interop.dll</td><td>1</td><td/></row>
-		<row><td>migradoc.documentobjectmodel</td><td>MigraDoc.DocumentObjectModel.dll</td><td>MIGRAD~1.DLL|MigraDoc.DocumentObjectModel.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Dropbox\MMSoft C#.Net\MMSoft\MMSoft\bin\Release\MigraDoc.DocumentObjectModel.dll</td><td>1</td><td/></row>
-		<row><td>migradoc.documentobjectmodel1</td><td>ISX_DEFAULTCOMPONENT2</td><td>MIGRAD~1.XML|MigraDoc.DocumentObjectModel.xml</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Dropbox\MMSoft C#.Net\MMSoft\MMSoft\bin\Release\MigraDoc.DocumentObjectModel.xml</td><td>1</td><td/></row>
-		<row><td>migradoc.rendering.dll</td><td>MigraDoc.Rendering.dll</td><td>MIGRAD~1.DLL|MigraDoc.Rendering.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Dropbox\MMSoft C#.Net\MMSoft\MMSoft\bin\Release\MigraDoc.Rendering.dll</td><td>1</td><td/></row>
-		<row><td>migradoc.rendering.xml</td><td>ISX_DEFAULTCOMPONENT2</td><td>MIGRAD~1.XML|MigraDoc.Rendering.xml</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Dropbox\MMSoft C#.Net\MMSoft\MMSoft\bin\Release\MigraDoc.Rendering.xml</td><td>1</td><td/></row>
-		<row><td>migradoc.rtfrendering.dll</td><td>MigraDoc.RtfRendering.dll</td><td>MIGRAD~1.DLL|MigraDoc.RtfRendering.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Dropbox\MMSoft C#.Net\MMSoft\MMSoft\bin\Release\MigraDoc.RtfRendering.dll</td><td>1</td><td/></row>
-		<row><td>migradoc.rtfrendering.xml</td><td>ISX_DEFAULTCOMPONENT2</td><td>MIGRAD~1.XML|MigraDoc.RtfRendering.xml</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Dropbox\MMSoft C#.Net\MMSoft\MMSoft\bin\Release\MigraDoc.RtfRendering.xml</td><td>1</td><td/></row>
+		<row><td>axinterop.acropdflib.dll</td><td>AxInterop.AcroPDFLib.dll</td><td>AXINTE~1.DLL|AxInterop.AcroPDFLib.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Documents\GitHub\MMSoft\mmsoft\bin\Release\AxInterop.AcroPDFLib.dll</td><td>1</td><td/></row>
+		<row><td>bouncycastle.crypto.dll</td><td>BouncyCastle.Crypto.dll</td><td>BOUNCY~1.DLL|BouncyCastle.Crypto.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Documents\GitHub\MMSoft\mmsoft\bin\Release\BouncyCastle.Crypto.dll</td><td>1</td><td/></row>
+		<row><td>interop.acropdflib.dll</td><td>Interop.AcroPDFLib.dll</td><td>INTERO~1.DLL|Interop.AcroPDFLib.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Documents\GitHub\MMSoft\mmsoft\bin\Release\Interop.AcroPDFLib.dll</td><td>1</td><td/></row>
+		<row><td>ionic.zlib.dll</td><td>Ionic.Zlib.dll</td><td>IONICZ~1.DLL|Ionic.Zlib.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Documents\GitHub\MMSoft\mmsoft\bin\Release\Ionic.Zlib.dll</td><td>1</td><td/></row>
+		<row><td>log4net.dll</td><td>log4net.dll</td><td>log4net.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Documents\GitHub\MMSoft\mmsoft\bin\Release\log4net.dll</td><td>1</td><td/></row>
+		<row><td>malcourantlogo.jpg</td><td>ISX_DEFAULTCOMPONENT3</td><td>MALCOU~1.JPG|MalcourantLogo.jpg</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Documents\GitHub\MMSoft\mmsoft\img\MalcourantLogo.jpg</td><td>1</td><td/></row>
+		<row><td>microsoft.office.interop.wor</td><td>Microsoft.Office.Interop.Word.dll</td><td>MICROS~1.DLL|Microsoft.Office.Interop.Word.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Documents\GitHub\MMSoft\mmsoft\bin\Release\Microsoft.Office.Interop.Word.dll</td><td>1</td><td/></row>
+		<row><td>microsoft.office.interop.wor1</td><td>ISX_DEFAULTCOMPONENT2</td><td>MICROS~1.XML|Microsoft.Office.Interop.Word.xml</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Documents\GitHub\MMSoft\mmsoft\bin\Release\Microsoft.Office.Interop.Word.xml</td><td>1</td><td/></row>
+		<row><td>microsoft.vbe.interop.dll</td><td>Microsoft.Vbe.Interop.dll</td><td>MICROS~1.DLL|Microsoft.Vbe.Interop.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Documents\GitHub\MMSoft\mmsoft\bin\Release\Microsoft.Vbe.Interop.dll</td><td>1</td><td/></row>
+		<row><td>migradoc.documentobjectmodel</td><td>MigraDoc.DocumentObjectModel.dll</td><td>MIGRAD~1.DLL|MigraDoc.DocumentObjectModel.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Documents\GitHub\MMSoft\mmsoft\bin\Release\MigraDoc.DocumentObjectModel.dll</td><td>1</td><td/></row>
+		<row><td>migradoc.documentobjectmodel1</td><td>ISX_DEFAULTCOMPONENT2</td><td>MIGRAD~1.XML|MigraDoc.DocumentObjectModel.xml</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Documents\GitHub\MMSoft\mmsoft\bin\Release\MigraDoc.DocumentObjectModel.xml</td><td>1</td><td/></row>
+		<row><td>migradoc.rendering.dll</td><td>MigraDoc.Rendering.dll</td><td>MIGRAD~1.DLL|MigraDoc.Rendering.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Documents\GitHub\MMSoft\mmsoft\bin\Release\MigraDoc.Rendering.dll</td><td>1</td><td/></row>
+		<row><td>migradoc.rendering.xml</td><td>ISX_DEFAULTCOMPONENT2</td><td>MIGRAD~1.XML|MigraDoc.Rendering.xml</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Documents\GitHub\MMSoft\mmsoft\bin\Release\MigraDoc.Rendering.xml</td><td>1</td><td/></row>
+		<row><td>migradoc.rtfrendering.dll</td><td>MigraDoc.RtfRendering.dll</td><td>MIGRAD~1.DLL|MigraDoc.RtfRendering.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Documents\GitHub\MMSoft\mmsoft\bin\Release\MigraDoc.RtfRendering.dll</td><td>1</td><td/></row>
+		<row><td>migradoc.rtfrendering.xml</td><td>ISX_DEFAULTCOMPONENT2</td><td>MIGRAD~1.XML|MigraDoc.RtfRendering.xml</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Documents\GitHub\MMSoft\mmsoft\bin\Release\MigraDoc.RtfRendering.xml</td><td>1</td><td/></row>
 		<row><td>mmsoft.primary_output</td><td>MMSoft.Primary_output</td><td>MMSoft.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;MMSoft&gt;|Built</td><td>3</td><td/></row>
-		<row><td>office.dll</td><td>office.dll</td><td>office.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Dropbox\MMSoft C#.Net\MMSoft\MMSoft\bin\Release\office.dll</td><td>1</td><td/></row>
-		<row><td>office.xml</td><td>ISX_DEFAULTCOMPONENT2</td><td>office.xml</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Dropbox\MMSoft C#.Net\MMSoft\MMSoft\bin\Release\office.xml</td><td>1</td><td/></row>
-		<row><td>pdfsharp.charting.dll</td><td>PdfSharp.Charting.dll</td><td>PDFSHA~1.DLL|PdfSharp.Charting.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Dropbox\MMSoft C#.Net\MMSoft\MMSoft\bin\Release\PdfSharp.Charting.dll</td><td>1</td><td/></row>
-		<row><td>pdfsharp.charting.xml</td><td>ISX_DEFAULTCOMPONENT2</td><td>PDFSHA~1.XML|PdfSharp.Charting.xml</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Dropbox\MMSoft C#.Net\MMSoft\MMSoft\bin\Release\PdfSharp.Charting.xml</td><td>1</td><td/></row>
-		<row><td>pdfsharp.dll</td><td>PdfSharp.dll</td><td>PdfSharp.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Dropbox\MMSoft C#.Net\MMSoft\MMSoft\bin\Release\PdfSharp.dll</td><td>1</td><td/></row>
-		<row><td>pdfsharp.xml</td><td>ISX_DEFAULTCOMPONENT2</td><td>PdfSharp.xml</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Dropbox\MMSoft C#.Net\MMSoft\MMSoft\bin\Release\PdfSharp.xml</td><td>1</td><td/></row>
-		<row><td>userconnexionconfig.txt</td><td>ISX_DEFAULTCOMPONENT</td><td>USERCO~1.TXT|UserConnexionConfig.txt</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Dropbox\MMSoft C#.Net\MMSoft\MMSoft\UserConnexionConfig.txt</td><td>1</td><td/></row>
+		<row><td>office.dll</td><td>office.dll</td><td>office.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Documents\GitHub\MMSoft\mmsoft\bin\Release\office.dll</td><td>1</td><td/></row>
+		<row><td>office.xml</td><td>ISX_DEFAULTCOMPONENT2</td><td>office.xml</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Documents\GitHub\MMSoft\mmsoft\bin\Release\office.xml</td><td>1</td><td/></row>
+		<row><td>pdfsharp.charting.dll</td><td>PdfSharp.Charting.dll</td><td>PDFSHA~1.DLL|PdfSharp.Charting.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Documents\GitHub\MMSoft\mmsoft\bin\Release\PdfSharp.Charting.dll</td><td>1</td><td/></row>
+		<row><td>pdfsharp.charting.xml</td><td>ISX_DEFAULTCOMPONENT2</td><td>PDFSHA~1.XML|PdfSharp.Charting.xml</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Documents\GitHub\MMSoft\mmsoft\bin\Release\PdfSharp.Charting.xml</td><td>1</td><td/></row>
+		<row><td>pdfsharp.dll</td><td>PdfSharp.dll</td><td>PdfSharp.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Documents\GitHub\MMSoft\mmsoft\bin\Release\PdfSharp.dll</td><td>1</td><td/></row>
+		<row><td>pdfsharp.xml</td><td>ISX_DEFAULTCOMPONENT2</td><td>PdfSharp.xml</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Documents\GitHub\MMSoft\mmsoft\bin\Release\PdfSharp.xml</td><td>1</td><td/></row>
+		<row><td>userconnexionconfig.txt</td><td>ISX_DEFAULTCOMPONENT</td><td>USERCO~1.TXT|UserConnexionConfig.txt</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\anth\Documents\GitHub\MMSoft\mmsoft\UserConnexionConfig.txt</td><td>1</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -2078,24 +2080,24 @@
 		<col def="S0">FTPLocation</col>
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
-		<row><td>AxInterop.AcroPDFLib.dll</td><td/><td/><td>_C1A84624_E4AB_4EB0_A903_C8ECC979E477_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>BouncyCastle.Crypto.dll</td><td/><td/><td>_2754C1F8_DF53_4CB0_8162_09AD7BDB8FC0_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>AxInterop.AcroPDFLib.dll</td><td/><td/><td>_5C063F44_01AD_488A_89A0_4DAA441D7144_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>BouncyCastle.Crypto.dll</td><td/><td/><td>_9CA7A52F_9871_4A21_9E36_07175A396A63_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_53CB5740_B777_4F83_A1ED_84D0CFDC9F24_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_8953565F_2A94_4DCF_942A_815A09A360BE_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT2</td><td/><td/><td>_1EDC3B32_DE0A_4720_930E_BB4F972C44E8_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT3</td><td/><td/><td>_242A9AFF_2DDC_4BD2_9F8F_00B6D3227C1B_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Interop.AcroPDFLib.dll</td><td/><td/><td>_16676CAE_6B87_4E89_B1F6_C50EF0BD958A_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Ionic.Zlib.dll</td><td/><td/><td>_C0A5147E_E347_4EE0_A9A6_12FC2F45F25C_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>MMSoft.Primary_output</td><td/><td/><td>_F80CFF0F_9CE3_411F_800D_7E4DBD4B6DDA_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Microsoft.Office.Interop.Word.dll</td><td/><td/><td>_2D60E1AA_AC6F_4EB4_83D9_62723DC1AA7B_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Microsoft.Vbe.Interop.dll</td><td/><td/><td>_11CB873B_E1DF_44AE_8720_9CC978F9056C_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>MigraDoc.DocumentObjectModel.dll</td><td/><td/><td>_4F4ADB5C_BF41_4711_ABBB_F8312845E77D_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>MigraDoc.Rendering.dll</td><td/><td/><td>_E729DBB5_E024_470F_AA9F_6D780D7501E1_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>MigraDoc.RtfRendering.dll</td><td/><td/><td>_B8C462AC_EAEC_4753_92A3_C067EE71F775_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>PdfSharp.Charting.dll</td><td/><td/><td>_84D5B3FE_AE51_4E4E_A1C8_33EB730C2255_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>PdfSharp.dll</td><td/><td/><td>_EF1590BD_B28D_4371_BAD7_64E98612860D_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>log4net.dll</td><td/><td/><td>_4D6F1B3C_54EC_446A_ABEB_6E369D40E3BC_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>office.dll</td><td/><td/><td>_0B532F84_201D_4933_8A73_A484CB47C895_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Interop.AcroPDFLib.dll</td><td/><td/><td>_E0E597EE_3B7A_4889_A5E7_BF0C941E7146_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Ionic.Zlib.dll</td><td/><td/><td>_B5B9257C_7875_458B_85E9_8A0B6254FBED_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>MMSoft.Primary_output</td><td/><td/><td>_9CEB7E49_1F00_422A_B47A_A784D7DD85F8_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Microsoft.Office.Interop.Word.dll</td><td/><td/><td>_B9DBE0CA_8943_4732_9B0B_AEEC9FF17BE0_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Microsoft.Vbe.Interop.dll</td><td/><td/><td>_AA7CA811_98EE_43AD_BB5A_5F968A44B764_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>MigraDoc.DocumentObjectModel.dll</td><td/><td/><td>_B89033DA_7290_423F_8F6E_80D1B123AC9B_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>MigraDoc.Rendering.dll</td><td/><td/><td>_1562CFF8_D483_4FC5_BC19_6C07C5951E04_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>MigraDoc.RtfRendering.dll</td><td/><td/><td>_4D27DAFB_5F92_4CD6_BBC5_BFBE1B85CAEB_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>PdfSharp.Charting.dll</td><td/><td/><td>_2A15D3D8_0DBC_48C4_8803_831251C53E10_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>PdfSharp.dll</td><td/><td/><td>_1D1F49C8_BC6A_42B5_BE83_4573DC3CF7E5_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>log4net.dll</td><td/><td/><td>_C2FB5AC5_86BC_484A_873C_E316172F8707_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>office.dll</td><td/><td/><td>_4516B98A_71CF_48C6_B229_FBCE87D6C506_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">
@@ -3529,6 +3531,10 @@
 		<row><td>IDS_PROGMSG_XML_UPDATE_FILE</td><td>1036</td><td>Mise à jour du fichier XML %s...</td><td>0</td><td/><td>-719069994</td></row>
 		<row><td>IDS_SETUPEXE_EXPIRE_MSG</td><td>1036</td><td>Cette installation pourra fonctionner jusqu’au : %s. L’installation va être abandonnée.</td><td>0</td><td/><td>-719069994</td></row>
 		<row><td>IDS_SETUPEXE_LAUNCH_COND_E</td><td>1036</td><td>Cette installation a été réalisée avec une version d’évaluation d’InstallShield : elle doit être lancée à l’aide de la commande setup.exe.</td><td>0</td><td/><td>-719069994</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME1</td><td>1033</td><td/><td>0</td><td/><td>-64693101</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME1</td><td>1036</td><td>Launch |Built</td><td>0</td><td/><td>-64693101</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME2</td><td>1033</td><td/><td>0</td><td/><td>-64736077</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME2</td><td>1036</td><td>LAUNCH~1.JPG|Launch MalcourantLogo.jpg</td><td>0</td><td/><td>-64736077</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO</td><td>1036</td><td>Sélectionnez le serveur de bases de données cible dans la liste des serveurs ci-dessous.</td><td>0</td><td/><td>-719069994</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_DB</td><td>1036</td><td>Sélectionnez le catalogue de base de données cible dans la liste des catalogues ci-dessous.</td><td>0</td><td/><td>-719069994</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_TEMPLATE</td><td>1036</td><td>[IS_SQLBROWSE_INTRO]</td><td>0</td><td/><td>-719069994</td></row>
@@ -3931,10 +3937,9 @@
 		<col def="V0">Data</col>
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I2">ISIconIndex</col>
-		<row><td>ARPPRODUCTICON.exe</td><td/><td>C:\Users\anth\Dropbox\MMSoft C#.Net\MMSoft\MMSoft\Img\MMSoftIcon.ico</td><td>0</td></row>
-		<row><td>NewShortcut2_2C6D213382384599B559891406507DB8.exe</td><td/><td>C:\Users\anth\Dropbox\MMSoft C#.Net\MMSoft\MMSoft\Img\MMSoftIcon.ico</td><td>0</td></row>
+		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;VSSolutionFolder&gt;\mmsoft\img\MMSoftIcon.ico</td><td>0</td></row>
+		<row><td>MalcourantLogo.jpg_98A3878242444FBFA495FD310F0C7A26.exe</td><td/><td>&lt;VSSolutionFolder&gt;\mmsoft\img\MMSoftIcon.ico</td><td>0</td></row>
 		<row><td>NewShortcut2_80960D766C154FA58AA651AB400D98F3.exe</td><td/><td>&lt;VSSolutionFolder&gt;\MMSoft\Img\MMlogo-alpha.ico</td><td>0</td></row>
-		<row><td>NewShortcut3_F1F9C2A2CE2847B9925DF17EFF052BFA.exe</td><td/><td>C:\Users\anth\Dropbox\MMSoft C#.Net\MMSoft\MMSoft\Img\MMSoftIcon.ico</td><td>0</td></row>
 		<row><td>_02459D04A2B043DEA44FCAA928203811.exe</td><td/><td/><td/></row>
 		<row><td>_22B6F55304D8422FAE57A06629F632CB.exe</td><td/><td>&lt;VSSolutionFolder&gt;\MMSoft\Img\MMlogo-alpha.ico</td><td/></row>
 		<row><td>_3E48C61E6C9A4F428A19AE21320F1EF1.exe</td><td/><td/><td/></row>
@@ -4057,8 +4062,8 @@
 		<col def="S0">Value</col>
 		<row><td>ActiveLanguage</td><td>1036</td></row>
 		<row><td>Comments</td><td/></row>
-		<row><td>CurrentMedia</td><td dt:dt="bin.base64" md5="de9f554a3bc05c12be9c31b998217995">
-UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
+		<row><td>CurrentMedia</td><td dt:dt="bin.base64" md5="6d78a46bf2c52ee27034bbcad20f7f95">
+QwBEAF8AUgBPAE0AAQBFAHgAcAByAGUAcwBzAA==
 			</td></row>
 		<row><td>DefaultProductConfiguration</td><td>Express</td></row>
 		<row><td>EnableSwidtag</td><td>1</td></row>
@@ -4451,7 +4456,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>ProductCode</td><td>{015BAB7F-2320-4C9B-9ADE-44B8BAAB223E}</td><td/></row>
 		<row><td>ProductName</td><td>MMSoft</td><td/></row>
-		<row><td>ProductVersion</td><td>0.0.2.0</td><td/></row>
+		<row><td>ProductVersion</td><td>1.1.0.0</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4527,6 +4532,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="L255">FileName</col>
 		<col def="s72">DirProperty</col>
 		<col def="i2">InstallMode</col>
+		<row><td>MalcourantLogo.jpg</td><td>ISX_DEFAULTCOMPONENT3</td><td/><td>mmsoft</td><td>2</td></row>
 	</table>
 
 	<table name="RemoveIniFile">
@@ -4612,8 +4618,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>NewShortcut2</td><td>StartMenuFolder</td><td>##ID_STRING5##</td><td>MMSoft.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td>NewShortcut2_2C6D213382384599B559891406507DB8.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>NewShortcut3</td><td>DesktopFolder</td><td>##ID_STRING6##</td><td>MMSoft.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td>NewShortcut3_F1F9C2A2CE2847B9925DF17EFF052BFA.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>MalcourantLogo.jpg</td><td>mmsoft</td><td>##IDS_SHORTCUT_DISPLAY_NAME2##</td><td>ISX_DEFAULTCOMPONENT3</td><td>[INSTALLDIR]Img\MalcourantLogo.jpg</td><td/><td/><td/><td>MalcourantLogo.jpg_98A3878242444FBFA495FD310F0C7A26.exe</td><td>0</td><td>1</td><td>IMG</td><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">
