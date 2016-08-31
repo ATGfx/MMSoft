@@ -108,6 +108,27 @@ namespace MMSoft
          mComEditState_b = EditState_b;
          BtnSaveComChanges.Visible = EditState_b;
          BtnCancelComChanges.Visible = EditState_b; 
+
+          if (mComEditState_b)
+          {
+              ControlStyle.SetBackgroundColorFocusStyle(this.splitContainer2.Panel1);
+              ControlStyle.SetBackgroundColorFocusStyle(ToolStripComTools);
+
+              if (!ToolStripLblCmd.Text.Contains(" *"))
+              {
+                  ToolStripLblCmd.Text += " *";
+              }
+          }
+          else
+          {
+              ControlStyle.SetFrameHeaderStyle(this.splitContainer2.Panel1);
+              ControlStyle.SetFrameHeaderStyle(ToolStripComTools);
+
+              if (ToolStripLblCmd.Text.Contains(" *"))
+              {
+                  ToolStripLblCmd.Text = ToolStripLblCmd.Text.Remove(ToolStripLblCmd.Text.IndexOf(" *"), 2);
+              }
+          }
       }
 
       private void SetJobEditState(bool EditState_b)
@@ -115,6 +136,27 @@ namespace MMSoft
          mJobEditState_b = EditState_b;
          BtnSaveJobChanges.Visible = EditState_b;
          BtnCancelJobChanges.Visible = EditState_b;
+
+         if (mJobEditState_b)
+         {
+             ControlStyle.SetBackgroundColorFocusStyle(this.splitContainer2.Panel2);
+             ControlStyle.SetBackgroundColorFocusStyle(ToolStripJobTools);
+
+             if (!ToolStripLblJob.Text.Contains(" *"))
+             {
+                 ToolStripLblJob.Text += " *";
+             }
+         }
+         else
+         {
+             ControlStyle.SetFrameHeaderStyle(this.splitContainer2.Panel2);
+             ControlStyle.SetFrameHeaderStyle(ToolStripJobTools);
+
+             if (ToolStripLblJob.Text.Contains(" *"))
+             {
+                 ToolStripLblJob.Text = ToolStripLblJob.Text.Remove(ToolStripLblJob.Text.IndexOf(" *"), 2);
+             }
+         }
       }
 
       private void ComClick(UInt32 ComID_UL)
@@ -128,7 +170,10 @@ namespace MMSoft
          mInitializingComData_b = true;
 
          ClearComInfo();
-         ClearJobInfo();
+         if (ComJobSelector.GetJobListView().GetSelectedItemID() == 0)
+         {
+            ClearJobInfo();
+         }
 
          if (mDBManager_O != null && mDBManager_O.mConnected_b)
          {
@@ -222,7 +267,9 @@ namespace MMSoft
 
             if (DlgRes_O == DialogResult.Yes)
             {
+               ComJobSelector.GetComListView().SetLockState(false);
                SetComEditState(false);
+               ComJobSelector.GetComListView().SelectItemByID(ComJobSelector.GetComListView().GetSelectedItemID());
             }
          }
       }
@@ -267,14 +314,45 @@ namespace MMSoft
                TxtPVUnitEst.Text = SqlDataReader_O["CoutEstim"].ToString();
                TxtPVUnitFact.Text = SqlDataReader_O["PVFact"].ToString();
                TxtJobStatus.Text = SqlDataReader_O["JobStatusLib"].ToString();
-               try { DTPClientDelay.Value = Convert.ToDateTime(SqlDataReader_O["DelaiClient"].ToString()); }
-               catch (FormatException e) { DTPClientDelay.Value = DTPClientDelay.MinDate; }
-               try { DTPPromiseDelay.Value = Convert.ToDateTime(SqlDataReader_O["DelaiPromis"].ToString()); }
-               catch (FormatException e) { DTPPromiseDelay.Value = DTPPromiseDelay.MinDate; }
-               try { DTPRealisedDelay.Value = Convert.ToDateTime(SqlDataReader_O["DelaRealise"].ToString()); }
-               catch (FormatException e) { DTPRealisedDelay.Value = DTPRealisedDelay.MinDate; }
+
+               try 
+               { 
+                   DTPClientDelay.Value = Convert.ToDateTime(SqlDataReader_O["DelaiClient"].ToString()); 
+               }
+               catch (FormatException e) 
+               { 
+                   DTPClientDelay.Value = DTPClientDelay.MinDate; 
+               }
+
+               try 
+               { 
+                   DTPPromiseDelay.Value = Convert.ToDateTime(SqlDataReader_O["DelaiPromis"].ToString()); 
+               }
+               catch (FormatException e) 
+               { 
+                   DTPPromiseDelay.Value = DTPPromiseDelay.MinDate; 
+               }
+
+               try 
+               { 
+                   DTPRealisedDelay.Value = Convert.ToDateTime(SqlDataReader_O["DelaRealise"].ToString());
+                   DTPRealisedDelay.Visible = true;
+               }
+               catch (FormatException e) 
+               { 
+                   DTPRealisedDelay.Value = DTPRealisedDelay.MinDate;
+                   DTPRealisedDelay.Visible = false;
+               }
+
                TxtJobInfo.Text = SqlDataReader_O["InfoJob"].ToString();
                CheckBoxRegieWork.Checked = RegieWork_i > 0;
+
+               // Fill sum hours prested on job
+               float NbrH_f = mDBManager_O.mFunctionManager_O.SCFNC_CountPointageHoursOnJob(ComJobID_UL);
+
+               TxtHPrest.Text = NbrH_f.ToString();
+               JobProgress.Maximum = (int)Convert.ToDecimal(TxtHEstim.Text);
+               JobProgress.Value = Math.Min((int)NbrH_f, JobProgress.Maximum);
             }
 
             SqlDataReader_O.Close();
@@ -406,6 +484,8 @@ namespace MMSoft
                   ComJobSelector.GetComListView().SetLockState(false);
 
                mUpdateDepartmentAssociation_b = false;
+
+               ComJobSelector.GetJobListView().SelectItemByID(ComJobSelector.GetJobListView().GetSelectedItemID());
             }
          }
       }
@@ -563,6 +643,8 @@ namespace MMSoft
          DTPClientDelay.Value = DTPClientDelay.MinDate;
          DTPPromiseDelay.Value = DTPPromiseDelay.MinDate;
          JobAssociatedDep.Clear();
+         TxtHPrest.Text = "";
+         JobProgress.Value = 0;
 
          mIgnoreJobValueChangedEvent_b = false;
       }
@@ -625,7 +707,11 @@ namespace MMSoft
             {
                JobClick(ComJobSelector.GetJobListView().GetSelectedItemID());
             }
-         }         
+         }
+         else
+         {
+             MessageBox.Show("Veuillez sélectionner un job sur lequel ajouter une note d'envoi", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+         }
       }
 
       private void ToolStripBtnReturn_Click(object sender, EventArgs e)
@@ -639,6 +725,12 @@ namespace MMSoft
       private void DTPClientDelay_ValueChanged(object sender, EventArgs e)
       {
          //DTPPromiseDelay.Value = DTPClientDelay.Value;
+      }
+
+      private void ToolStripBtnReturnDBListView_Click(object sender, EventArgs e)
+      {
+          FormReturnListView FormReturnListView_O = new FormReturnListView(mDBManager_O, ComJobSelector.GetJobListView().GetSelectedItemID());
+          FormReturnListView_O.ShowDialog();
       }
    }
 }

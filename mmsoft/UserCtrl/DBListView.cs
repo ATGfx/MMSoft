@@ -91,6 +91,7 @@ namespace MMSoft
          Asc_b = true;
          mLastSQLRequest_st = "";
          mInitialWhere_ST = InitialWhere_ST;
+         mInitialOrderBy_ST = OrderBy_ST;
 
          mListView_O.View = View.Details;
          mListView_O.FullRowSelect = true;
@@ -196,11 +197,14 @@ namespace MMSoft
                   for (int i = 1; i < mTableFields_ST.Count; i++)
                   {
                      // If type of data is date, take only 10 first char to avoid time
-                     if ((SqlDataReader_O.GetFieldType(SqlDataReader_O.GetOrdinal(mTableFields_ST[i])) == typeof(DateTime)) && 
-                         SqlDataReader_O[mTableFields_ST[i]].ToString().Length > 10)
-                        ListViewItem_O.SubItems.Add(SqlDataReader_O[mTableFields_ST[i]].ToString().Substring(0, 10));
-                     else
-                        ListViewItem_O.SubItems.Add(SqlDataReader_O[mTableFields_ST[i]].ToString());
+                      if ((SqlDataReader_O.GetFieldType(SqlDataReader_O.GetOrdinal(mTableFields_ST[i])) == typeof(DateTime)) &&
+                          !String.IsNullOrEmpty(SqlDataReader_O[mTableFields_ST[i]].ToString()))
+                      {
+                        DateTime Date_O = Convert.ToDateTime(SqlDataReader_O[mTableFields_ST[i]].ToString());
+                        ListViewItem_O.SubItems.Add(Date_O.ToShortDateString());
+                      }
+                      else
+                          ListViewItem_O.SubItems.Add(SqlDataReader_O[mTableFields_ST[i]].ToString());
 
                      ListViewItem_O.SubItems[i].Name = mTableFields_ST[i];
                   }
@@ -428,8 +432,13 @@ namespace MMSoft
             mLocked_b = false;
             mListViewItem_O.BackColor = Color.Transparent;
             mListViewItem_O.ForeColor = Color.Black;
-            this.mListView_O.Items[mListViewItem_O.Index].Focused = true;
-            this.mListView_O.Items[mListViewItem_O.Index].Selected = true;
+
+            if (mListViewItem_O.Index > 0)
+            {
+                this.mListView_O.Items[mListViewItem_O.Index].Focused = true;
+                this.mListView_O.Items[mListViewItem_O.Index].Selected = true;
+            }
+
             mListViewItem_O = null;
 
             for (int i = 0; i < mFilterTextBox_O.Count; i++)

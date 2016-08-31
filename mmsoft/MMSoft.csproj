@@ -165,6 +165,12 @@
     <Compile Include="Forms\FormNeCertif.Designer.cs">
       <DependentUpon>FormNeCertif.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormReturnListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormReturnListView.Designer.cs">
+      <DependentUpon>FormReturnListView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormVersion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,7 @@
     <Compile Include="Forms\FormAskString.Designer.cs">
       <DependentUpon>FormAskString.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserConnexionInfo.cs" />
     <Compile Include="UserCtrl\NECertifUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -339,6 +346,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormNeCertif.resx">
       <DependentUpon>FormNeCertif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormReturnListView.resx">
+      <DependentUpon>FormReturnListView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormVersion.resx">
       <DependentUpon>FormVersion.cs</DependentUpon>

@@ -57,7 +57,7 @@ namespace MMSoft
          TextAlignCom_O.Add(HorizontalAlignment.Left);
          TextAlignCom_O.Add(HorizontalAlignment.Left);
 
-         DBListViewCom.Initialize(mDBManager_O, "ComSelectPop", TableFieldCom_ST, 5, ColumnHeaderNameCom_ST, ColumnHeaderDefaultSizeCom_i, TextAlignCom_O);
+         DBListViewCom.Initialize(mDBManager_O, "ComSelectPop", TableFieldCom_ST, 5, ColumnHeaderNameCom_ST, ColumnHeaderDefaultSizeCom_i, TextAlignCom_O, null, "NumRefInterne DESC");
 
          List<String> TableFieldJob_ST = new List<String>();
          List<String> ColumnHeaderNameJob_ST = new List<String>();

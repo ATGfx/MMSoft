@@ -248,8 +248,13 @@ namespace MMSoft
       {
          if (mDataBaseManager_O != null && mDataBaseManager_O.mConnected_b)
          {
-            mDataBaseManager_O.mStoredProcedureManager_O.STPROC_DeletePointageAndEtape(DBListViewCheckings.GetSelectedItemID());
-            RefreshPersPointage();
+             DialogResult DlgRes_O = MessageBox.Show("La suppression d'un pointage est définitive, êtes-vous certain de vouloir continuer ?", "Attention !", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+             if (DlgRes_O == DialogResult.Yes)
+             {
+                 mDataBaseManager_O.mStoredProcedureManager_O.STPROC_DeletePointageAndEtape(DBListViewCheckings.GetSelectedItemID());
+                 RefreshPersPointage();
+             }
          }
       }
 
