@@ -707,7 +707,11 @@ namespace MMSoft
             {
                JobClick(ComJobSelector.GetJobListView().GetSelectedItemID());
             }
-         }         
+         }
+         else
+         {
+             MessageBox.Show("Veuillez sélectionner un job sur lequel ajouter une note d'envoi", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+         }
       }
 
       private void ToolStripBtnReturn_Click(object sender, EventArgs e)
