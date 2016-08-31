@@ -108,6 +108,27 @@ namespace MMSoft
          mComEditState_b = EditState_b;
          BtnSaveComChanges.Visible = EditState_b;
          BtnCancelComChanges.Visible = EditState_b; 
+
+          if (mComEditState_b)
+          {
+              ControlStyle.SetBackgroundColorFocusStyle(this.splitContainer2.Panel1);
+              ControlStyle.SetBackgroundColorFocusStyle(ToolStripComTools);
+
+              if (!ToolStripLblCmd.Text.Contains(" *"))
+              {
+                  ToolStripLblCmd.Text += " *";
+              }
+          }
+          else
+          {
+              ControlStyle.SetFrameHeaderStyle(this.splitContainer2.Panel1);
+              ControlStyle.SetFrameHeaderStyle(ToolStripComTools);
+
+              if (ToolStripLblCmd.Text.Contains(" *"))
+              {
+                  ToolStripLblCmd.Text = ToolStripLblCmd.Text.Remove(ToolStripLblCmd.Text.IndexOf(" *"), 2);
+              }
+          }
       }
 
       private void SetJobEditState(bool EditState_b)
@@ -115,6 +136,27 @@ namespace MMSoft
          mJobEditState_b = EditState_b;
          BtnSaveJobChanges.Visible = EditState_b;
          BtnCancelJobChanges.Visible = EditState_b;
+
+         if (mJobEditState_b)
+         {
+             ControlStyle.SetBackgroundColorFocusStyle(this.splitContainer2.Panel2);
+             ControlStyle.SetBackgroundColorFocusStyle(ToolStripJobTools);
+
+             if (!ToolStripLblJob.Text.Contains(" *"))
+             {
+                 ToolStripLblJob.Text += " *";
+             }
+         }
+         else
+         {
+             ControlStyle.SetFrameHeaderStyle(this.splitContainer2.Panel2);
+             ControlStyle.SetFrameHeaderStyle(ToolStripJobTools);
+
+             if (ToolStripLblJob.Text.Contains(" *"))
+             {
+                 ToolStripLblJob.Text = ToolStripLblJob.Text.Remove(ToolStripLblJob.Text.IndexOf(" *"), 2);
+             }
+         }
       }
 
       private void ComClick(UInt32 ComID_UL)
@@ -225,7 +267,9 @@ namespace MMSoft
 
             if (DlgRes_O == DialogResult.Yes)
             {
+               ComJobSelector.GetComListView().SetLockState(false);
                SetComEditState(false);
+               ComJobSelector.GetComListView().SelectItemByID(ComJobSelector.GetComListView().GetSelectedItemID());
             }
          }
       }
@@ -416,6 +460,8 @@ namespace MMSoft
                   ComJobSelector.GetComListView().SetLockState(false);
 
                mUpdateDepartmentAssociation_b = false;
+
+               ComJobSelector.GetJobListView().SelectItemByID(ComJobSelector.GetJobListView().GetSelectedItemID());
             }
          }
       }

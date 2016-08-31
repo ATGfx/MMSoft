@@ -311,7 +311,28 @@ namespace MMSoft
       {
          mEditState_b = EditState_b;
          ToolStripBtnSaveChanges.Visible = EditState_b;
-         ToolStripBtnCancelChanges.Visible = EditState_b; 
+         ToolStripBtnCancelChanges.Visible = EditState_b;
+
+         if (mEditState_b)
+         {
+             ControlStyle.SetBackgroundColorFocusStyle(this.splitContainer2.Panel1);
+             ControlStyle.SetBackgroundColorFocusStyle(PanelCheckHeader);
+
+             if (!LblMemberName.Text.Contains(" *"))
+             {
+                 LblMemberName.Text += " *";
+             }
+         }
+         else
+         {
+             ControlStyle.SetFrameHeaderStyle(this.splitContainer2.Panel1);
+             ControlStyle.SetFrameHeaderStyle(PanelCheckHeader);
+
+             if (LblMemberName.Text.Contains(" *"))
+             {
+                 LblMemberName.Text = LblMemberName.Text.Remove(LblMemberName.Text.IndexOf(" *"), 2);
+             }
+         }
       }
 
       private void BtnCancelChanges_Click(object sender, EventArgs e)
@@ -325,6 +346,7 @@ namespace MMSoft
                SetEditState(false);
                DBListViewMembers.SetLockState(false);
                mUpdateDepartmentAssociation_b = false;
+               DBListViewMembers.SelectItemByID(DBListViewMembers.GetSelectedItemID());
             }            
          }
       }

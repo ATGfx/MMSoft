@@ -412,6 +412,8 @@ namespace MMSoft
                SetEditState(false);
                DBListViewClient.SetLockState(false);
                Refresh();
+
+               DBListViewClient.SelectItemByID(DBListViewClient.GetSelectedItemID());
             }
          }
       }
@@ -420,7 +422,28 @@ namespace MMSoft
       {
          mEditState_b = EditState_b;
          ToolStripBtnSaveChanges.Visible = EditState_b;
-         ToolStripBtnCancelChanges.Visible = EditState_b; 
+         ToolStripBtnCancelChanges.Visible = EditState_b;
+
+         if (mEditState_b)
+         {
+             ControlStyle.SetBackgroundColorFocusStyle(this.splitContainer2.Panel1);
+             ControlStyle.SetBackgroundColorFocusStyle(PanelCheckHeader);
+
+             if (!LblClientNumAndName.Text.Contains(" *"))
+             {
+                 LblClientNumAndName.Text += " *";
+             }
+         }
+         else
+         {
+             ControlStyle.SetFrameHeaderStyle(this.splitContainer2.Panel1);
+             ControlStyle.SetFrameHeaderStyle(PanelCheckHeader);
+
+             if (LblClientNumAndName.Text.Contains(" *"))
+             {
+                 LblClientNumAndName.Text = LblClientNumAndName.Text.Remove(LblClientNumAndName.Text.IndexOf(" *"), 2);
+             }
+         }
       }
 
       private void ValueChanged(object sender, EventArgs e)

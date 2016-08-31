@@ -432,8 +432,13 @@ namespace MMSoft
             mLocked_b = false;
             mListViewItem_O.BackColor = Color.Transparent;
             mListViewItem_O.ForeColor = Color.Black;
-            this.mListView_O.Items[mListViewItem_O.Index].Focused = true;
-            this.mListView_O.Items[mListViewItem_O.Index].Selected = true;
+
+            if (mListViewItem_O.Index > 0)
+            {
+                this.mListView_O.Items[mListViewItem_O.Index].Focused = true;
+                this.mListView_O.Items[mListViewItem_O.Index].Selected = true;
+            }
+
             mListViewItem_O = null;
 
             for (int i = 0; i < mFilterTextBox_O.Count; i++)
