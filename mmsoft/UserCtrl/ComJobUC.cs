@@ -314,12 +314,36 @@ namespace MMSoft
                TxtPVUnitEst.Text = SqlDataReader_O["CoutEstim"].ToString();
                TxtPVUnitFact.Text = SqlDataReader_O["PVFact"].ToString();
                TxtJobStatus.Text = SqlDataReader_O["JobStatusLib"].ToString();
-               try { DTPClientDelay.Value = Convert.ToDateTime(SqlDataReader_O["DelaiClient"].ToString()); }
-               catch (FormatException e) { DTPClientDelay.Value = DTPClientDelay.MinDate; }
-               try { DTPPromiseDelay.Value = Convert.ToDateTime(SqlDataReader_O["DelaiPromis"].ToString()); }
-               catch (FormatException e) { DTPPromiseDelay.Value = DTPPromiseDelay.MinDate; }
-               try { DTPRealisedDelay.Value = Convert.ToDateTime(SqlDataReader_O["DelaRealise"].ToString()); }
-               catch (FormatException e) { DTPRealisedDelay.Value = DTPRealisedDelay.MinDate; }
+
+               try 
+               { 
+                   DTPClientDelay.Value = Convert.ToDateTime(SqlDataReader_O["DelaiClient"].ToString()); 
+               }
+               catch (FormatException e) 
+               { 
+                   DTPClientDelay.Value = DTPClientDelay.MinDate; 
+               }
+
+               try 
+               { 
+                   DTPPromiseDelay.Value = Convert.ToDateTime(SqlDataReader_O["DelaiPromis"].ToString()); 
+               }
+               catch (FormatException e) 
+               { 
+                   DTPPromiseDelay.Value = DTPPromiseDelay.MinDate; 
+               }
+
+               try 
+               { 
+                   DTPRealisedDelay.Value = Convert.ToDateTime(SqlDataReader_O["DelaRealise"].ToString());
+                   DTPRealisedDelay.Visible = true;
+               }
+               catch (FormatException e) 
+               { 
+                   DTPRealisedDelay.Value = DTPRealisedDelay.MinDate;
+                   DTPRealisedDelay.Visible = false;
+               }
+
                TxtJobInfo.Text = SqlDataReader_O["InfoJob"].ToString();
                CheckBoxRegieWork.Checked = RegieWork_i > 0;
 
