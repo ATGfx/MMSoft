@@ -3534,7 +3534,7 @@
 		<row><td>IDS_SHORTCUT_DISPLAY_NAME1</td><td>1033</td><td/><td>0</td><td/><td>-64693101</td></row>
 		<row><td>IDS_SHORTCUT_DISPLAY_NAME1</td><td>1036</td><td>Launch |Built</td><td>0</td><td/><td>-64693101</td></row>
 		<row><td>IDS_SHORTCUT_DISPLAY_NAME2</td><td>1033</td><td/><td>0</td><td/><td>-64736077</td></row>
-		<row><td>IDS_SHORTCUT_DISPLAY_NAME2</td><td>1036</td><td>LAUNCH~1.JPG|Launch MalcourantLogo.jpg</td><td>0</td><td/><td>-64736077</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME2</td><td>1036</td><td>MMSoft</td><td>0</td><td/><td>-64728876</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO</td><td>1036</td><td>Sélectionnez le serveur de bases de données cible dans la liste des serveurs ci-dessous.</td><td>0</td><td/><td>-719069994</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_DB</td><td>1036</td><td>Sélectionnez le catalogue de base de données cible dans la liste des catalogues ci-dessous.</td><td>0</td><td/><td>-719069994</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_TEMPLATE</td><td>1036</td><td>[IS_SQLBROWSE_INTRO]</td><td>0</td><td/><td>-719069994</td></row>
@@ -3826,16 +3826,21 @@
 		<row><td>ID_STRING1</td><td>1036</td><td/><td>0</td><td/><td>-719069994</td></row>
 		<row><td>ID_STRING2</td><td>1036</td><td>www.malcourant-mecanique.be/</td><td>0</td><td/><td>-450649226</td></row>
 		<row><td>ID_STRING3</td><td>1036</td><td>Malcourant Mécanique</td><td>0</td><td/><td>-450632874</td></row>
+		<row><td>ID_STRING4</td><td>1033</td><td>LAUNCH~1.JPG|Launch MalcourantLogo.jpg</td><td>0</td><td/><td>-64749420</td></row>
+		<row><td>ID_STRING4</td><td>1036</td><td>MMSoft</td><td>0</td><td/><td>-64718636</td></row>
 		<row><td>ID_STRING5</td><td>1033</td><td>NEWSHO~1|NewShortcut2</td><td>0</td><td/><td>-450663754</td></row>
 		<row><td>ID_STRING5</td><td>1036</td><td>MMSoft</td><td>0</td><td/><td>-450635082</td></row>
 		<row><td>ID_STRING6</td><td>1033</td><td>NEWSHO~1|NewShortcut3</td><td>0</td><td/><td>-450643274</td></row>
 		<row><td>ID_STRING6</td><td>1036</td><td>MMSoft</td><td>0</td><td/><td>-450639178</td></row>
+		<row><td>ID_STRING7</td><td>1033</td><td>MMSoft</td><td>0</td><td/><td>-64708396</td></row>
+		<row><td>ID_STRING7</td><td>1036</td><td>MMSoft</td><td>0</td><td/><td>-64708396</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1036</td><td>La fonction ne sera pas installée.</td><td>0</td><td/><td>-719069994</td></row>
 	</table>
 
 	<table name="ISSwidtagProperty">
 		<col key="yes" def="s72">Name</col>
 		<col def="s0">Value</col>
+		<row><td>TagCreatorName</td><td>AT</td></row>
 		<row><td>UniqueId</td><td>ACFA6CD1-30B8-4E64-99E3-1F5833B49AD8</td></row>
 	</table>
 
@@ -3938,7 +3943,9 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I2">ISIconIndex</col>
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;VSSolutionFolder&gt;\mmsoft\img\MMSoftIcon.ico</td><td>0</td></row>
-		<row><td>MalcourantLogo.jpg_98A3878242444FBFA495FD310F0C7A26.exe</td><td/><td>&lt;VSSolutionFolder&gt;\mmsoft\img\MMSoftIcon.ico</td><td>0</td></row>
+		<row><td>MalcourantLogo.jpg_2BCF8FE5C2DE4F689AF63AE5AAD5E789.exe</td><td/><td>&lt;VSSolutionFolder&gt;\mmsoft\img\MMSoftIcon.ico</td><td>0</td></row>
+		<row><td>MalcourantLogo.jpg_6C5AAF056C3D4DC9BB0EBFC8304F2BB0.exe</td><td/><td>&lt;VSSolutionFolder&gt;\mmsoft\img\MMSoftIcon.ico</td><td>0</td></row>
+		<row><td>MalcourantLogo.jpg_79F54B1EFF184D3792F74C14807BEC46.exe</td><td/><td>&lt;VSSolutionFolder&gt;\mmsoft\img\MMSoftIcon.ico</td><td>0</td></row>
 		<row><td>NewShortcut2_80960D766C154FA58AA651AB400D98F3.exe</td><td/><td>&lt;VSSolutionFolder&gt;\MMSoft\Img\MMlogo-alpha.ico</td><td>0</td></row>
 		<row><td>_02459D04A2B043DEA44FCAA928203811.exe</td><td/><td/><td/></row>
 		<row><td>_22B6F55304D8422FAE57A06629F632CB.exe</td><td/><td>&lt;VSSolutionFolder&gt;\MMSoft\Img\MMlogo-alpha.ico</td><td/></row>
@@ -4066,7 +4073,7 @@
 QwBEAF8AUgBPAE0AAQBFAHgAcAByAGUAcwBzAA==
 			</td></row>
 		<row><td>DefaultProductConfiguration</td><td>Express</td></row>
-		<row><td>EnableSwidtag</td><td>1</td></row>
+		<row><td>EnableSwidtag</td><td>0</td></row>
 		<row><td>ISCompilerOption_CompileBeforeBuild</td><td>1</td></row>
 		<row><td>ISCompilerOption_Debug</td><td>0</td></row>
 		<row><td>ISCompilerOption_IncludePath</td><td/></row>
@@ -4618,7 +4625,9 @@ QwBEAF8AUgBPAE0AAQBFAHgAcAByAGUAcwBzAA==
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>MalcourantLogo.jpg</td><td>mmsoft</td><td>##IDS_SHORTCUT_DISPLAY_NAME2##</td><td>ISX_DEFAULTCOMPONENT3</td><td>[INSTALLDIR]Img\MalcourantLogo.jpg</td><td/><td/><td/><td>MalcourantLogo.jpg_98A3878242444FBFA495FD310F0C7A26.exe</td><td>0</td><td>1</td><td>IMG</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>MalcourantLogo.jpg</td><td>mmsoft</td><td>##IDS_SHORTCUT_DISPLAY_NAME2##</td><td>ISX_DEFAULTCOMPONENT3</td><td>[INSTALLDIR]MMSoft.exe</td><td/><td/><td/><td>MalcourantLogo.jpg_6C5AAF056C3D4DC9BB0EBFC8304F2BB0.exe</td><td>0</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>MalcourantLogo.jpg1</td><td>DesktopFolder</td><td>##ID_STRING4##</td><td>ISX_DEFAULTCOMPONENT3</td><td>[INSTALLDIR]MMSoft.exe</td><td/><td/><td/><td>MalcourantLogo.jpg_79F54B1EFF184D3792F74C14807BEC46.exe</td><td>0</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>MalcourantLogo.jpg2</td><td>StartupFolder</td><td>##ID_STRING7##</td><td>ISX_DEFAULTCOMPONENT3</td><td>[INSTALLDIR]MMSoft.exe</td><td/><td/><td/><td>MalcourantLogo.jpg_2BCF8FE5C2DE4F689AF63AE5AAD5E789.exe</td><td>0</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">

@@ -350,9 +350,12 @@ namespace MMSoft
                // Fill sum hours prested on job
                float NbrH_f = mDBManager_O.mFunctionManager_O.SCFNC_CountPointageHoursOnJob(ComJobID_UL);
 
-               TxtHPrest.Text = NbrH_f.ToString();
-               JobProgress.Maximum = (int)Convert.ToDecimal(TxtHEstim.Text);
-               JobProgress.Value = Math.Min((int)NbrH_f, JobProgress.Maximum);
+               if (!String.IsNullOrEmpty(TxtHEstim.Text))
+               {
+                  TxtHPrest.Text = NbrH_f.ToString();
+                  JobProgress.Maximum = (int)Convert.ToDecimal(TxtHEstim.Text);
+                  JobProgress.Value = Math.Min((int)NbrH_f, JobProgress.Maximum);
+               }
             }
 
             SqlDataReader_O.Close();
