@@ -83,7 +83,7 @@ namespace MMSoft
 
             Version Version_O = Assembly.GetEntryAssembly().GetName().Version;
 
-            int Major_i, Minor_i;
+            int Major_i, Minor_i, Build_i;
 
             if (mDBManager_O != null && mDBManager_O.mConnected_b)
             {
@@ -95,11 +95,12 @@ namespace MMSoft
                 {
                     Major_i = Convert.ToInt32(SqlDataReader_O["Major"].ToString());
                     Minor_i = Convert.ToInt32(SqlDataReader_O["Minor"].ToString());
+                    Build_i = Convert.ToInt32(SqlDataReader_O["Build"].ToString());
 
-                    if (Major_i != Version_O.Major || Minor_i != Version_O.Minor)
+                    if (Major_i != Version_O.Major || Minor_i != Version_O.Minor || Build_i != Version_O.Build)
                     {
                         MessageBox.Show("Vous ne possédez pas la dernière version de MMSoft.\nVersion installée : " + Version_O.Major + "." + Version_O.Minor +
-                                        "\nVersion serveur : " + Major_i + "." + Minor_i, "Attention !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        "\nVersion serveur : " + Major_i + "." + Minor_i + "." + Build_i, "Attention !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }

@@ -74,44 +74,28 @@
     <ApplicationIcon>MMlogo-alpha.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BouncyCastle.Crypto, Version=1.6.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
-      <HintPath>..\packages\XtremeDocumentStudio.NETFree.15.16\lib\net40\BouncyCastle.Crypto.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Ionic.Zlib, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtremeDocumentStudio.NETFree.15.16\lib\net40\Ionic.Zlib.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtremeDocumentStudio.NETFree.15.16\lib\net40\log4net.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Microsoft Visual Studio 2013 Express\ReportViewer\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="MigraDoc.DocumentObjectModel, Version=1.32.4334.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\MigraDoc.DocumentObjectModel.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="MigraDoc.Rendering, Version=1.32.4334.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\MigraDoc.Rendering.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="MigraDoc.RtfRendering, Version=1.32.4334.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\MigraDoc.RtfRendering.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="PdfSharp, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\PdfSharp.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="PdfSharp.Charting, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\PdfSharp.Charting.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -468,25 +452,6 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <COMReference Include="AcroPDFLib">
-      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="AxAcroPDFLib">
-      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>aximp</WrapperTool>
-      <Isolated>False</Isolated>
-    </COMReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\DataSources\" />

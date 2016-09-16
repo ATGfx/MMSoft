@@ -20,7 +20,7 @@ namespace MMSoft
 
          this.CenterToParent();
 
-         ToolStripLblVersion.Text = "MMSoft version " + mVersion_O.Major + "." + mVersion_O.Minor;
+         ToolStripLblVersion.Text = "MMSoft version " + mVersion_O.Major + "." + mVersion_O.Minor + "." + mVersion_O.Build;
 
          ToolStripValidatePref.Renderer = new BorderlessToolStripRenderer();
          ControlStyle.SetBackgroundColorFocusStyle(this);

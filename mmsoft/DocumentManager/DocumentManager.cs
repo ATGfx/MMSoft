@@ -585,12 +585,6 @@ namespace MMSoft
 
                Row_O = InfoTable_O.AddRow();
 
-               Row_O.Cells[0].AddParagraph("Quantité commandée : ");
-               Row_O.Cells[0].Format.Font.Bold = true;
-               Row_O.Cells[1].AddParagraph(SqlDataReader_O["Qte"].ToString());
-
-               Row_O = InfoTable_O.AddRow();
-
                Row_O.Cells[0].AddParagraph("Libellé de commande : ");
                Row_O.Cells[0].Format.Font.Bold = true;
                Row_O.Cells[1].AddParagraph(SqlDataReader_O["LibelleCmd"].ToString());

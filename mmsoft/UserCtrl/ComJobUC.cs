@@ -8,8 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using Microsoft.Office.Interop.Word;
-
 
 namespace MMSoft
 {
