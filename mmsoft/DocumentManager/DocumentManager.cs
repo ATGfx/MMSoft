@@ -233,13 +233,13 @@ namespace MMSoft
                Paragraph_O.AddFormattedText("Job n° " + SqlDataReader_O["NumOrdre"].ToString() + " : " + SqlDataReader_O["JobLib"].ToString(), "Heading2");
 
                Paragraph_O = Section_O.AddParagraph();
-               Paragraph_O.Format.SpaceBefore = "1cm";
+               Paragraph_O.Format.SpaceBefore = "0.5cm";
                Paragraph_O.AddText("Note d'envoi : \n");
                Paragraph_O.AddText("Clotûré : ");
 
                // Client infos
                Paragraph_O = Section_O.AddParagraph();
-               Paragraph_O.Format.SpaceBefore = "1cm";
+               Paragraph_O.Format.SpaceBefore = "0.5cm";
                Paragraph_O.AddFormattedText("Informations client", "Heading2");
 
                Paragraph_O = Section_O.AddParagraph();

@@ -181,7 +181,9 @@ C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\bin\Release\office.xml
 C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\bin\Release\Interop.AcroPDFLib.dll
 C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\bin\Release\AxInterop.AcroPDFLib.dll
 C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\obj\Release\MMSoft.FormReturnListView.resources
+C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\bin\Release\MigraDoc.DocumentObjectModel.xml
 C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\bin\Release\MigraDoc.Rendering.xml
 C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\bin\Release\MigraDoc.RtfRendering.xml
 C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\bin\Release\PdfSharp.xml
 C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\bin\Release\PdfSharp.Charting.xml
+C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\obj\Release\MMSoft.csprojResolveAssemblyReference.cache
