@@ -187,3 +187,4 @@ C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\obj\Release\MMSoft.csproj.GenerateR
 C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\obj\Release\MMSoft.exe
 C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\obj\Release\MMSoft.pdb
 C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\bin\Release\Microsoft.CSharp.dll
+C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\obj\Release\MMSoft.csprojResolveAssemblyReference.cache
