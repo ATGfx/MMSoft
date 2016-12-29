@@ -151,7 +151,6 @@ C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\bin\Release\de\MigraDoc.Rendering.r
 C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\bin\Release\de\MigraDoc.RtfRendering.resources.dll
 C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\bin\Release\de\PdfSharp.resources.dll
 C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\bin\Release\de\PdfSharp.Charting.resources.dll
-C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\obj\Release\MMSoft.csprojResolveAssemblyReference.cache
 C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\obj\Release\MMSoft.FormAskJobHourCorrection.resources
 C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\obj\Release\MMSoft.FormChecking.resources
 C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\obj\Release\MMSoft.FormCheckingEdition.resources
@@ -187,3 +186,4 @@ C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\obj\Release\MMSoft.UsrCtrl.FormDrag
 C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\obj\Release\MMSoft.csproj.GenerateResource.Cache
 C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\obj\Release\MMSoft.exe
 C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\obj\Release\MMSoft.pdb
+C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\bin\Release\Microsoft.CSharp.dll
