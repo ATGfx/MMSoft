@@ -374,12 +374,12 @@ namespace MMSoft
 
                UInt32 PersStatusID_UL = 0, CPID_UL = 0;
                String CoutHeure_ST;
-               float CoutHeure_f = 0.0f;
+               double CoutHeure_f = 0.0f;
                DBComboxStatus.GetSelectedItemID(out PersStatusID_UL);
                ComboxPostalCode.GetSelectedItemID(out CPID_UL);
                CoutHeure_ST = TxtCost.Text.Trim('\u20AC');
                CoutHeure_ST = CoutHeure_ST.Trim();
-               float.TryParse(CoutHeure_ST, System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out CoutHeure_f);
+               Double.TryParse(CoutHeure_ST.Replace(',', '.'), System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out CoutHeure_f);
 
                Param_O.Add("@PersID");                Values_O.Add((int)DBListViewMembers.GetSelectedItemID());
                Param_O.Add("@PersStatutID");          Values_O.Add((int)PersStatusID_UL);

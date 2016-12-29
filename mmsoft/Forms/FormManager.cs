@@ -31,6 +31,7 @@ namespace MMSoft
       private JobsState mJobStatesUC_O;
       private JobsCorrectionUC mJobCorrectionUC_O;
       private StatsUC mStatsUC_O;
+      private HallsUC mHallsUC_O;
 
       private IMMSoftUC mCurrentUC_O;
 
@@ -73,6 +74,7 @@ namespace MMSoft
          mJobStatesUC_O = new JobsState(mDBManager_O);
          mJobCorrectionUC_O = new JobsCorrectionUC(mDBManager_O);
          mStatsUC_O = new StatsUC(mDBManager_O, mDocManager_O);
+         mHallsUC_O = new HallsUC(mDBManager_O);
 
          //ControlStyle.SetBackgroundStyle(this);
          ControlStyle.SetBackgroundStyle(MainMenuStrip);
@@ -102,6 +104,7 @@ namespace MMSoft
             ToolStripBtnJobStates.Checked = false;
             ToolStripBtnJobsCorrection.Checked = false;
             ToolStripBtnStats.Checked = false;
+            ToolStripBtnHalls.Checked = false;
 
             ToolStripBtnHome.Image = HomeImgList.Images[0];
 
@@ -145,6 +148,11 @@ namespace MMSoft
             {
                ToolStripBtnStats.Checked = true;
                mCurrentUC_O = mStatsUC_O;
+            }
+            else if (sender.Equals(ToolStripBtnHalls))
+            {
+               ToolStripBtnHalls.Checked = true;
+               mCurrentUC_O = mHallsUC_O;
             }
 
             // Active UC

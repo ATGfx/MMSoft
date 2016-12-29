@@ -377,3 +377,5 @@ C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\obj\Debug\MMSoft.csproj.GenerateRes
 C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\obj\Debug\MMSoft.exe
 C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\obj\Debug\MMSoft.pdb
 C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\obj\Debug\MMSoft.csprojResolveAssemblyReference.cache
+C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\bin\Debug\Microsoft.CSharp.dll
+C:\Users\anth\Documents\GitHub\MMSoft\MMSoft\obj\Debug\MMSoft.HallsUC.resources

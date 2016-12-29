@@ -152,8 +152,8 @@ namespace MMSoft
                   {
                      float QteFact_f, PUFact_f;
 
-                     if (Single.TryParse(ToolStripTxtboxQteFact.Text, System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out QteFact_f) &&
-                         Single.TryParse(ToolStripTxtboxPUFact.Text, System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out PUFact_f))
+                     if (Single.TryParse(ToolStripTxtboxQteFact.Text.Replace(',', '.'), System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out QteFact_f) &&
+                         Single.TryParse(ToolStripTxtboxPUFact.Text.Replace(',', '.'), System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out PUFact_f))
                      {
                         mDBManager_O.mStoredProcedureManager_O.STPROC_FacturerJob(mComJobID_UL);
 

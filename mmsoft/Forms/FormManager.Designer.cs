@@ -47,6 +47,7 @@
          this.ToolStripBtnJobStates = new System.Windows.Forms.ToolStripButton();
          this.ToolStripBtnJobsCorrection = new System.Windows.Forms.ToolStripButton();
          this.ToolStripBtnStats = new System.Windows.Forms.ToolStripButton();
+         this.ToolStripBtnHalls = new System.Windows.Forms.ToolStripButton();
          this.ModuleContainerPanel = new System.Windows.Forms.Panel();
          this.StatusStripFormChecking = new System.Windows.Forms.StatusStrip();
          this.LblDBImg = new System.Windows.Forms.ToolStripStatusLabel();
@@ -141,7 +142,8 @@
             this.ToolStripBtnChecking,
             this.ToolStripBtnJobStates,
             this.ToolStripBtnJobsCorrection,
-            this.ToolStripBtnStats});
+            this.ToolStripBtnStats,
+            this.ToolStripBtnHalls});
          this.ModulesToolStrip.Location = new System.Drawing.Point(1, 57);
          this.ModulesToolStrip.Name = "ModulesToolStrip";
          this.ModulesToolStrip.Size = new System.Drawing.Size(1028, 79);
@@ -256,6 +258,17 @@
          this.ToolStripBtnStats.Size = new System.Drawing.Size(76, 76);
          this.ToolStripBtnStats.Text = "Statistiques";
          this.ToolStripBtnStats.Click += new System.EventHandler(this.ModuleChanged);
+         // 
+         // ToolStripBtnHalls
+         // 
+         this.ToolStripBtnHalls.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+         this.ToolStripBtnHalls.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripBtnHalls.Image")));
+         this.ToolStripBtnHalls.ImageTransparentColor = System.Drawing.Color.Magenta;
+         this.ToolStripBtnHalls.Name = "ToolStripBtnHalls";
+         this.ToolStripBtnHalls.Size = new System.Drawing.Size(76, 76);
+         this.ToolStripBtnHalls.Text = "ToolStripBtnHall";
+         this.ToolStripBtnHalls.ToolTipText = "Halls et machines";
+         this.ToolStripBtnHalls.Click += new System.EventHandler(this.ModuleChanged);
          // 
          // ModuleContainerPanel
          // 
@@ -380,5 +393,6 @@
       private System.Windows.Forms.ToolStripButton ToolStripBtnJobStates;
       private System.Windows.Forms.ToolStripButton ToolStripBtnJobsCorrection;
       private System.Windows.Forms.ToolStripButton ToolStripBtnStats;
+      private System.Windows.Forms.ToolStripButton ToolStripBtnHalls;
    }
 }

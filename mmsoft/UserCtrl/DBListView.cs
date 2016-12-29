@@ -553,14 +553,14 @@ namespace MMSoft
          }
       }
 
-      public float Sum(String ColumnName_st)
+      public double Sum(String ColumnName_st)
       {
-         float Sum_f = 0;
-         float CurrentValue_f;
+         double Sum_f = 0;
+         double CurrentValue_f;
 
          for (int i = 0; i < mListView_O.Items.Count; i++)
          {
-            if (float.TryParse(mListView_O.Items[i].SubItems[ColumnName_st].Text, out CurrentValue_f))
+            if (Double.TryParse(mListView_O.Items[i].SubItems[ColumnName_st].Text, out CurrentValue_f))
             {
                Sum_f += CurrentValue_f;
             }

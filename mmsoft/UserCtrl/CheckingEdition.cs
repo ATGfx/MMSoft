@@ -285,7 +285,7 @@ namespace MMSoft
       /// </summary>
       public bool RecordModifications()
       {
-         float NbrH_f, NbrhMach1_f, NbrhMach2_f, NbrhMach3_f, NbrhMach4_f;
+         double NbrH_f, NbrhMach1_f, NbrhMach2_f, NbrhMach3_f, NbrhMach4_f;
          bool Rts_b = false;
          UInt32 TaskCount_UL, ComJobEtapeID_UL, SelectedItemID_UL, NewCheckingID_UL;
 
@@ -352,8 +352,8 @@ namespace MMSoft
                Param_O.Clear();
                Values_O.Clear();
 
-               float Nbrh_f;
-               float.TryParse(TxtNbrH.Text, System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out Nbrh_f);
+               double Nbrh_f;
+               Double.TryParse(TxtNbrH.Text.Replace(',', '.'), System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out Nbrh_f);
 
                Param_O.Add("@NbrH"); Values_O.Add(Nbrh_f);
                Param_O.Add("@Rem"); Values_O.Add(TxtRem.Text);
@@ -375,7 +375,7 @@ namespace MMSoft
 
                      Param_O.Add("@MachineID"); Values_O.Add((int)MachineID_UL);
 
-                     float.TryParse(TxtNbrhMach1.Text, System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out Nbrh_f);
+                     double.TryParse(TxtNbrhMach1.Text.Replace(',', '.'), System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out Nbrh_f);
                      Param_O.Add("@NbrHMachine"); Values_O.Add(Nbrh_f);
 
                      Param_O.Add("@PointageMachinelID"); Values_O.Add((int)mPointageMachineID_O[0]);
@@ -449,7 +449,7 @@ namespace MMSoft
       /// This method checks if all data entered by user is correct before recording modifications. If this is not the case, wrong elements in GUI are highlighted.
       /// </summary>
       /// <returns></returns>
-      private bool CheckData(out float Nbrh_f, out float NbrhMach1_f, out float NbrhMach2_f, out float NbrhMach3_f, out float NbrhMach4_f)
+      private bool CheckData(out double Nbrh_f, out double NbrhMach1_f, out double NbrhMach2_f, out double NbrhMach3_f, out double NbrhMach4_f)
       {
          bool Rts_b = true;
          UInt32 Mach1SelectedItemID_UL, Mach2SelectedItemID_UL, Mach3SelectedItemID_UL, Mach4SelectedItemID_UL, TaskID_UL;
@@ -459,19 +459,19 @@ namespace MMSoft
          NbrhMach4_f = 0.0f;
 
          Rts_b &= DBComboxTask.GetSelectedItemID(out TaskID_UL);
-         Rts_b &= float.TryParse(TxtNbrH.Text, System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out Nbrh_f);
+         Rts_b &= Double.TryParse(TxtNbrH.Text.Replace(',', '.'), System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out Nbrh_f);
 
          if (DBComboxMachine1.GetSelectedItemID(out Mach1SelectedItemID_UL))
-            Rts_b &= float.TryParse(TxtNbrhMach1.Text, System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out NbrhMach1_f);
+            Rts_b &= Double.TryParse(TxtNbrhMach1.Text.Replace(',', '.'), System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out NbrhMach1_f);
 
          if (DBComboxMachine2.GetSelectedItemID(out Mach2SelectedItemID_UL))
-            Rts_b &= float.TryParse(TxtNbrhMach2.Text, System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out NbrhMach2_f);
+            Rts_b &= Double.TryParse(TxtNbrhMach2.Text.Replace(',', '.'), System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out NbrhMach2_f);
 
          if (DBComboxMachine3.GetSelectedItemID(out Mach3SelectedItemID_UL))
-            Rts_b &= float.TryParse(TxtNbrhMach3.Text, System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out NbrhMach3_f);
+            Rts_b &= Double.TryParse(TxtNbrhMach3.Text.Replace(',', '.'), System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out NbrhMach3_f);
 
          if (DBComboxMachine4.GetSelectedItemID(out Mach4SelectedItemID_UL))
-            Rts_b &= float.TryParse(TxtNbrhMach4.Text, System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out NbrhMach4_f);
+            Rts_b &= Double.TryParse(TxtNbrhMach4.Text.Replace(',', '.'), System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out NbrhMach4_f);
 
          return Rts_b;
       }

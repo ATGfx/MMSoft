@@ -319,6 +319,23 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="F:MMSoft.HallsUC.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMSoft.HallsUC.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMSoft.HallsUC.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
         <member name="F:MMSoft.NECertifUC.components">
             <summary> 
             Required designer variable.
@@ -739,7 +756,7 @@
             This method record checking edition.
             </summary>
         </member>
-        <member name="M:MMSoft.CheckingEdition.CheckData(System.Single@,System.Single@,System.Single@,System.Single@,System.Single@)">
+        <member name="M:MMSoft.CheckingEdition.CheckData(System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)">
             <summary>
             This method checks if all data entered by user is correct before recording modifications. If this is not the case, wrong elements in GUI are highlighted.
             </summary>

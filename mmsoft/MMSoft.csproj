@@ -170,6 +170,12 @@
       <DependentUpon>FormAskString.cs</DependentUpon>
     </Compile>
     <Compile Include="UserConnexionInfo.cs" />
+    <Compile Include="UserCtrl\HallsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtrl\HallsUC.Designer.cs">
+      <DependentUpon>HallsUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserCtrl\NECertifUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -341,6 +347,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAskString.resx">
       <DependentUpon>FormAskString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtrl\HallsUC.resx">
+      <DependentUpon>HallsUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserCtrl\NECertifUC.resx">
       <DependentUpon>NECertifUC.cs</DependentUpon>

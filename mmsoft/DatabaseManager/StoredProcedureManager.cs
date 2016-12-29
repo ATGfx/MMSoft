@@ -267,6 +267,83 @@ namespace MMSoft
             return NewID_UL;
          }
 
+         //CreateHall
+         public UInt32 STPROC_CreateHall(String HallName_ST)
+         {
+            SqlParameter NewID_O = null;
+            UInt32 NewID_UL = 0;
+
+            if (mConnected_b)
+            {
+               // 1. create a command object identifying the stored procedure
+               SqlCommand SqlCommand_O = new SqlCommand("CreateHall", mSqlConnection_O);
+
+               // 2. set the command object so it knows to execute a stored procedure
+               SqlCommand_O.CommandType = CommandType.StoredProcedure;
+
+               // 3. add parameter to command, which will be passed to the stored procedure
+               SqlCommand_O.Parameters.Add(new SqlParameter("@Nom", HallName_ST));
+
+               NewID_O = SqlCommand_O.Parameters.Add("@newid", SqlDbType.Int);
+               NewID_O.Direction = ParameterDirection.Output;
+
+               // execute the command
+               try
+               {
+                  SqlCommand_O.ExecuteNonQuery();
+                  if (!(UInt32.TryParse(NewID_O.Value.ToString(), out NewID_UL)))
+                  {
+                     System.Diagnostics.Debug.WriteLine("Error in stored procedure CreateHall : ID returned is not integer type.\r\n");
+                  }
+               }
+               catch (SqlException Error_O)
+               {
+                  System.Diagnostics.Debug.WriteLine("Cannot execute stored procedure CreateHall SQL exception.\r\n" + Error_O.ToString());
+               }
+            }
+
+            return NewID_UL;
+         }
+
+         //CreateEngine
+         public UInt32 STPROC_CreateEngine(String EngineName_ST, UInt32 HallId)
+         {
+            SqlParameter NewID_O = null;
+            UInt32 NewID_UL = 0;
+
+            if (mConnected_b)
+            {
+               // 1. create a command object identifying the stored procedure
+               SqlCommand SqlCommand_O = new SqlCommand("CreateEngine", mSqlConnection_O);
+
+               // 2. set the command object so it knows to execute a stored procedure
+               SqlCommand_O.CommandType = CommandType.StoredProcedure;
+
+               // 3. add parameter to command, which will be passed to the stored procedure
+               SqlCommand_O.Parameters.Add(new SqlParameter("@Nom", EngineName_ST));
+               SqlCommand_O.Parameters.Add(new SqlParameter("@HallID", (int)HallId));
+
+               NewID_O = SqlCommand_O.Parameters.Add("@newid", SqlDbType.Int);
+               NewID_O.Direction = ParameterDirection.Output;
+
+               // execute the command
+               try
+               {
+                  SqlCommand_O.ExecuteNonQuery();
+                  if (!(UInt32.TryParse(NewID_O.Value.ToString(), out NewID_UL)))
+                  {
+                     System.Diagnostics.Debug.WriteLine("Error in stored procedure CreateEngine : ID returned is not integer type.\r\n");
+                  }
+               }
+               catch (SqlException Error_O)
+               {
+                  System.Diagnostics.Debug.WriteLine("Cannot execute stored procedure CreateEngine SQL exception.\r\n" + Error_O.ToString());
+               }
+            }
+
+            return NewID_UL;
+         }
+
          // CreateClientCom
          public UInt32 STPROC_CreateClientCom(UInt32 ClientID_UL, String NumRefInterne_st)
          {
@@ -433,7 +510,7 @@ namespace MMSoft
          //CreateNE
 
          // CreateFullNE
-         public UInt32 STPROC_CreateFullNE(UInt32 ComJobID_UL, float	QteNE_f, DateTime DateExpedition_O,	bool ChkPartiel_b, String PathNE_st, String JobLib_st, String NumCmdClient_st, String Obs_st)
+         public UInt32 STPROC_CreateFullNE(UInt32 ComJobID_UL, double	QteNE, DateTime DateExpedition_O,	bool ChkPartiel_b, String PathNE_st, String JobLib_st, String NumCmdClient_st, String Obs_st)
          {
             SqlParameter NewID_O = null;
             UInt32 NewID_UL = 0;
@@ -448,7 +525,7 @@ namespace MMSoft
 
                // 3. add parameter to command, which will be passed to the stored procedure
                SqlCommand_O.Parameters.Add(new SqlParameter("@ComJobID", (int)ComJobID_UL));
-               SqlCommand_O.Parameters.Add(new SqlParameter("@QteNE", QteNE_f));
+               SqlCommand_O.Parameters.Add(new SqlParameter("@QteNE", QteNE));
                SqlCommand_O.Parameters.Add(new SqlParameter("@DateExpedition", DateExpedition_O));
                SqlCommand_O.Parameters.Add(new SqlParameter("@ChkPartiel", ChkPartiel_b));
                SqlCommand_O.Parameters.Add(new SqlParameter("@PathNE", PathNE_st));
@@ -519,7 +596,7 @@ namespace MMSoft
          //CreatePlan
 
          //CreatePointage
-         public UInt32 STPROC_CreatePointage(UInt32 ComJobID_UL, UInt32 ComJobEtapeID_UL, UInt32 PersID_UL, float NbrH_f, String Rem_ST, DateTime DatePrest_O)
+         public UInt32 STPROC_CreatePointage(UInt32 ComJobID_UL, UInt32 ComJobEtapeID_UL, UInt32 PersID_UL, double NbrH, String Rem_ST, DateTime DatePrest_O)
          {
             SqlParameter NewID_O = null;
             UInt32 NewID_UL = 0;
@@ -536,7 +613,7 @@ namespace MMSoft
                   SqlCommand_O.Parameters.Add(new SqlParameter("@ComJobID", (int)ComJobID_UL));
                   SqlCommand_O.Parameters.Add(new SqlParameter("@ComJobEtapeID", (int)ComJobEtapeID_UL));
                   SqlCommand_O.Parameters.Add(new SqlParameter("@PersID", (int)PersID_UL));
-                  SqlCommand_O.Parameters.Add(new SqlParameter("@NbrH", NbrH_f));
+                  SqlCommand_O.Parameters.Add(new SqlParameter("@NbrH", NbrH));
                   SqlCommand_O.Parameters.Add(new SqlParameter("@Rem", Rem_ST));
                   SqlCommand_O.Parameters.Add(new SqlParameter("@DatePrest", DatePrest_O));
 
@@ -564,7 +641,7 @@ namespace MMSoft
          //CreatePointageGlobal
 
          //CreatePointageMachine
-         public UInt32 STPROC_CreatePointageMachine(UInt32 ComJobEtapeID_UL, UInt32 MachineID_UL, float NbrHMachine_f)
+         public UInt32 STPROC_CreatePointageMachine(UInt32 ComJobEtapeID_UL, UInt32 MachineID_UL, double NbrHMachine)
          {
             SqlParameter NewID_O = null;
             UInt32 NewID_UL = 0;
@@ -580,7 +657,7 @@ namespace MMSoft
                // 3. add parameter to command, which will be passed to the stored procedure
                SqlCommand_O.Parameters.Add(new SqlParameter("@ComJobEtapeID", (int)ComJobEtapeID_UL));
                SqlCommand_O.Parameters.Add(new SqlParameter("@MachineID", (int)MachineID_UL));
-               SqlCommand_O.Parameters.Add(new SqlParameter("@NbrHMachine", NbrHMachine_f));
+               SqlCommand_O.Parameters.Add(new SqlParameter("@NbrHMachine", NbrHMachine));
 
                NewID_O = SqlCommand_O.Parameters.Add("@newID", SqlDbType.Int);
                NewID_O.Direction = ParameterDirection.Output;

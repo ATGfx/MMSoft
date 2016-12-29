@@ -397,6 +397,8 @@ namespace MMSoft
          if (mJobEditState_b)
          {
             UInt32 JobID_UL = ComJobSelector.GetJobListView().GetSelectedItemID();
+            double HEstim, PVEstim;
+
             //Build update request
             if (mDBManager_O != null && mDBManager_O.mConnected_b)
             {
@@ -418,11 +420,14 @@ namespace MMSoft
                Param_O.Add("@InfoJob");
                Param_O.Add("@ComJobID");
 
+               Double.TryParse(TxtHEstim.Text.Replace(',', '.'), System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out HEstim);
+               Double.TryParse(TxtPVUnitEst.Text.Replace(',', '.'), System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out PVEstim);
+
                Values_O.Add(ToolStripBtnJobLib.Text);
                Values_O.Add(TxtQte.Text);
                Values_O.Add(TxtQteProd.Text);
-               Values_O.Add(TxtHEstim.Text);
-               Values_O.Add(TxtPVUnitEst.Text);
+               Values_O.Add(HEstim);
+               Values_O.Add(PVEstim);
                Values_O.Add(DTPClientDelay.Value);
                Values_O.Add(DTPPromiseDelay.Value);
                Values_O.Add(CheckBoxRegieWork.Checked);

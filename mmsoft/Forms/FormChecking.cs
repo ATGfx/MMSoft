@@ -246,13 +246,13 @@ namespace MMSoft
         {
            FormAskString FormAskString_O = new FormAskString("Quantité produite :");
            DialogResult DlgRes_O = FormAskString_O.ShowDialog();
-           float Qte_f;
+           double Qte_f;
 
            if (DlgRes_O == DialogResult.OK && mDBManager_O != null && mDBManager_O.mConnected_b)
            {
                if (DbListViewComJobs.GetSelectedItemID() > 0)
                {
-                  if (float.TryParse(FormAskString_O.mEnteredString_ST, System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out Qte_f))
+                  if (Double.TryParse(FormAskString_O.mEnteredString_ST, System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out Qte_f))
                   {
                      DialogResult DlgConfirm_O = MessageBox.Show("Etes-vous sûr de vouloir clôturer le job " + DbListViewComJobs.GetSelectedItemField("JobLib") + " avec une quantité produite de " + Qte_f + " ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 

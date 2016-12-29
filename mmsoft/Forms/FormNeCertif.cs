@@ -85,7 +85,7 @@ namespace MMSoft
       private void ToolStripBtnValidate_Click(object sender, EventArgs e)
       {
          bool Rts_b = false;
-         float QteNE_f = 0.0f;
+         double QteNE_f = 0.0;
          bool Continue_b = true;
          UInt32 SendNoteID_UL = 0;
          UInt32 CertifID_UL = 0;
@@ -93,7 +93,7 @@ namespace MMSoft
          if (mDBManager_O != null && mDBManager_O.mConnected_b)
          {
             // Create note envoi
-            if (!float.TryParse(TxtQte.Text, System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out QteNE_f))
+            if (!Double.TryParse(TxtQte.Text.Replace(',', '.'), System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out QteNE_f))
             {
                DialogResult DlgRes_O = MessageBox.Show("La quantité " + TxtQte.Text + " n'est pas un nombre valide. Continuer avec la valeur 0.0f ?", "Erreur !", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
 

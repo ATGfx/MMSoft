@@ -12,7 +12,7 @@ namespace MMSoft
    public partial class FormAskJobHourCorrection : Form
    {
       private String mEnteredString_ST;
-      public float mEnteredNumber_f;
+      public double mEnteredNumber_f;
 
       public FormAskJobHourCorrection()
       {
@@ -38,7 +38,7 @@ namespace MMSoft
          mEnteredString_ST = TxtEnteredString.Text;
          mEnteredString_ST = mEnteredString_ST.Replace(".", ",");
 
-         if (float.TryParse(mEnteredString_ST, System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out mEnteredNumber_f))
+         if (Double.TryParse(mEnteredString_ST, System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out mEnteredNumber_f))
          {
             this.DialogResult = DialogResult.OK;
             this.Dispose();
